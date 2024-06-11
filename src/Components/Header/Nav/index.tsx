@@ -1,3 +1,4 @@
+import Button from "@/Components/Button";
 import Link from "next/link";
 
 const links = [
@@ -30,12 +31,13 @@ const links = [
 
 export default function Nav() {
   return (
-    <nav className="flex gap-6 justify-center w-full">
+    <nav className="flex gap-8 justify-center w-full items-center h-full text-neutral-0">
       {links.map((link) => (
         <Link key={link.id} href={link.to}>
           {link.title}
         </Link>
       ))}
+      <Button className="bg-secondary-500 text-neutral-0 w-32">Doe Agora</Button>
     </nav>
   );
 }
