@@ -7,6 +7,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    margin: {
+      r2: "2%",
+      r4: "4%",
+      r6: "6%",
+      r8: "8%",
+      r10: "10%",
+    },
     fontFamily: {
       Mulish: ["Mulish", "sans-serif"],
       Lato: ["Lato", "sans-serif"],
