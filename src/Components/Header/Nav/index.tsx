@@ -37,7 +37,9 @@ export default function Nav() {
           {link.title}
         </Link>
       ))}
-      <Button className="bg-secondary-500 text-neutral-0 w-32">Doe Agora</Button>
+      <Button color="green-light" className="px-5" rounded>
+        Doe Agora
+      </Button>
     </nav>
   );
 }
