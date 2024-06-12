@@ -5,5 +5,5 @@ interface ContainerProps {
 }
 
 export default function Container({ children }: ContainerProps) {
-  return <div className="mx-r10 mb-r4 flex flex-col">{children}</div>;
+  return <div className="mx-r10 mb-r4 flex flex-col w-svw">{children}</div>;
 }
