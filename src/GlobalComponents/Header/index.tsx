@@ -4,7 +4,7 @@ import Nav from "./Nav";
 
 export default function Header() {
   return (
-    <header className="vw-100 flex h-24 bg-transparent items-center bg-transparent">
+    <header className="w-svw flex h-24 bg-transparent items-center bg-transparent">
       <div className="mx-r10 flex w-svw items-center">
         <Link href={"/"}>
           <img src={logo.src} alt="logo" className="w-16 h-16 self-start" />
