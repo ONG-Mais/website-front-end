@@ -5,9 +5,9 @@ import Nav from "./Nav";
 export default function Header() {
   return (
     <header className="w-svw flex h-24 bg-transparent items-center bg-transparent">
-      <div className="mx-r10 flex w-svw items-center">
+      <div className="mx-r11 flex w-svw items-center">
         <Link href={"/"}>
-          <img src={logo.src} alt="logo" className="w-16 h-16 self-start" />
+          <img src={logo.src} alt="logo" className="w-[4.5rem] h-16" />
         </Link>
         <Nav />
       </div>

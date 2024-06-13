@@ -37,7 +37,11 @@ export default function Button({ children, className, color, rounded }: ButtonPr
 
   if (tailwindColorString) {
     return (
-      <button className={`${className} ${tailwindColorString} ${rounded ? "rounded-3xl" : "rounded-lg"} px-10 py-2`}>
+      <button
+        className={`${className} ${tailwindColorString} ${
+          rounded ? "rounded-3xl" : "rounded-lg"
+        } px-[1.75em] py-[0.6em]`}
+      >
         {children}
       </button>
     );
