@@ -1,4 +1,5 @@
 import Banner from "@/GlobalComponents/Banner";
+import About from "./UI/About";
 export default function Home() {
   return (
     <main>
@@ -6,8 +7,8 @@ export default function Home() {
         image={"/images/criança_pintando.jpg"}
         title="DIGNIDADE, ESPERANÇA E CONHECIMENTO"
         text="Transformando a vida de crianças e adolescentes"
-        absolute={{ top: "0", left: "0" }}
       />
+      <About />
     </main>
   );
 }
