@@ -31,7 +31,7 @@ const links = [
 
 export default function Nav() {
   return (
-    <nav className="flex gap-8 justify-center w-full items-center h-full text-neutral-0">
+    <nav className="flex gap-10 justify-center w-full items-center h-full text-neutral-0">
       {links.map((link) => (
         <Link key={link.id} href={link.to}>
           {link.title}
