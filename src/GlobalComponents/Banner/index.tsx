@@ -18,9 +18,9 @@ export default function Banner({ image, title, text, height, absolute }: BannerP
         className="banner w-full -mt-r21 bg-cover relative flex justify-center items-end opacity-95 "
         style={{ backgroundImage: `url("${image}")` }}
       >
-        <div className="z-40 text-neutral-0 p-16 flex flex-col gap-8 font-Mulish text-center">
-          <h3 className="text-4xl font-bold">{title}</h3>
-          <p className="text-2xl">{text}</p>
+        <div className="z-40 text-neutral-0 p-14 flex flex-col gap-7 font-Mulish text-center">
+          <h3 className="text-ds font-bold">{title}</h3>
+          <p className="text-h3 font-normal">{text}</p>
         </div>
       </div>
     </div>

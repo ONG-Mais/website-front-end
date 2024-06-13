@@ -8,6 +8,19 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontSize: {
+      dlxl: "52px",
+      ds: "44px",
+      h1: "40px",
+      h2: "36px",
+      h3: "32px",
+      h4: "28px",
+      h5: "34px",
+      pl: "18px",
+      pm: "16px",
+      ps: "14px",
+      pxs: "12px",
+    },
     margin: {
       r2: "2%",
       r4: "4%",
