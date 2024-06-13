@@ -38,7 +38,7 @@ export default function Nav() {
         </Link>
       ))}
       <Button color="green-light" className="px-5" rounded>
-        Doe Agora
+        Doe agora
       </Button>
     </nav>
   );
