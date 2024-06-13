@@ -15,7 +15,7 @@ const config: Config = {
       h2: "36px",
       h3: "32px",
       h4: "28px",
-      h5: "34px",
+      h5: "24px",
       pl: "18px",
       pm: "16px",
       ps: "14px",

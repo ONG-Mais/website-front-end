@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className={lato.className}>
+    <html lang="pt-BR" className="w-full overflow-x-hidden">
+      <body className={`${lato.className}`}>
         <Header />
         {children}
       </body>
