@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { lato } from "./font";
 import Header from "@/GlobalComponents/Header";
+import Footer from "@/GlobalComponents/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className={`${lato.className}`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

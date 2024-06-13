@@ -33,7 +33,7 @@ export default function Nav() {
   return (
     <nav className="flex gap-10 justify-end w-full items-center h-full text-neutral-0">
       {links.map((link) => (
-        <Link key={link.id} href={link.to}>
+        <Link key={link.id} href={link.to} className="text-pl">
           {link.title}
         </Link>
       ))}
