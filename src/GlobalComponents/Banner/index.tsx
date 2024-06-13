@@ -1,17 +1,18 @@
 import "./style.css";
+
 interface BannerProps {
   image: string;
   title?: string;
   text?: string;
   height?: string;
-  absolute?: boolean;
+  absolute?: { top: string; left: string };
 }
 
 export default function Banner({ image, title, text, height, absolute }: BannerProps) {
   return (
     <div
       className={`flex h-2/3 w-full -z-10 overflow-hidden bg-neutral-900 ${
-        absolute ? "absolute top-0 left-0" : ""
+        absolute ? `absolute top-${absolute.top} left-${absolute.left}` : ""
       } ${height}`}
     >
       <div

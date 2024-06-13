@@ -6,7 +6,7 @@ export default function Home() {
         image={"/images/criança_pintando.jpg"}
         title="DIGNIDADE, ESPERANÇA E CONHECIMENTO"
         text="Transformando a vida de crianças e adolescentes"
-        absolute
+        absolute={{ top: "0", left: "0" }}
       />
     </main>
   );
