@@ -15,12 +15,12 @@ export default function Banner({ image, title, text, height, absolute }: BannerP
       } ${height}`}
     >
       <div
-        className="banner w-full -mt-r21 bg-cover relative flex justify-center items-end opacity-95 "
+        className="banner w-full -mt-r21 bg-cover relative flex justify-center items-end"
         style={{ backgroundImage: `url("${image}")` }}
       >
-        <div className="z-40 text-neutral-0 p-14 flex flex-col gap-7 font-Mulish text-center">
-          <h3 className="text-ds font-bold">{title}</h3>
-          <p className="text-h3 font-normal">{text}</p>
+        <div className="z-40 text-neutral-0 p-14 flex flex-col gap-7 font-Mulish text-center ">
+          <h3 className="text-ds font-semibold">{title}</h3>
+          <p className="text-h3 font-light">{text}</p>
         </div>
       </div>
     </div>
