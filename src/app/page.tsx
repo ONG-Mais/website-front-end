@@ -1,5 +1,6 @@
 import Banner from "@/GlobalComponents/Banner";
 import About from "./UI/About";
+import SocialImpact from "./UI/SocialImpact";
 export default function Home() {
   return (
     <main>
@@ -9,6 +10,7 @@ export default function Home() {
         text="Transformando a vida de crianças e adolescentes"
       />
       <About />
+      <SocialImpact />
     </main>
   );
 }
