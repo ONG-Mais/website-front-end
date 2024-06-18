@@ -4,9 +4,10 @@ interface ButtonProps {
   children: ReactNode;
   color: "blue-light" | "blue-dark" | "blue-outline" | "green-light" | "green-dark" | "green-outline";
   rounded?: boolean;
+  bold?: boolean;
   className?: string;
 }
-export default function Button({ children, className, color, rounded }: ButtonProps) {
+export default function Button({ children, className, color, rounded, bold }: ButtonProps) {
   let tailwindColorString = "";
 
   switch (color) {
@@ -37,9 +38,9 @@ export default function Button({ children, className, color, rounded }: ButtonPr
 
   return (
     <button
-      className={`${className} ${tailwindColorString} ${
-        rounded ? "rounded-3xl" : "rounded-lg"
-      } px-[1.75em] py-2 text-pl`}
+      className={`${className} ${tailwindColorString} ${rounded ? "rounded-3xl" : "rounded-lg"} 
+    ${bold ? "font-bold" : "font-normal"}
+      px-[1.75em] py-2 text-pl`}
     >
       {children}
     </button>
