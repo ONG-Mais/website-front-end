@@ -1,16 +1,16 @@
 import Button from "@/GlobalComponents/Button";
 import Link from "next/link";
-
+import { routes } from "@/app/lib/routes";
 const links = [
   {
     id: 1,
     title: "Quem Somos",
-    to: "/quem-somos",
+    to: routes.whoAreWe,
   },
   {
     id: 2,
     title: "O que fazemos",
-    to: "/o-que-fazemos",
+    to: routes.whatWeDo.main,
   },
   {
     id: 3,
@@ -20,12 +20,12 @@ const links = [
   {
     id: 4,
     title: "Parceiros",
-    to: "/parceiros",
+    to: routes.associates,
   },
   {
     id: 5,
     title: "Contato",
-    to: "/contato",
+    to: routes.contact,
   },
 ];
 
