@@ -5,6 +5,7 @@ import girlImage from "../../../../public/images/garota_maquiada.jpg";
 import boyImage from "../../../../public/images/garoto_sorrindo_mochila.jpg";
 import interBoyImage from "../../../../public/images/garoto_torcedor_inter.png";
 import "./style.css";
+import { routes } from "@/app/lib/routes";
 
 export default function DonateBanner() {
   return (
@@ -24,7 +25,7 @@ export default function DonateBanner() {
               <p className="text-h3 font-Mulish">Doe agora e faça a esperança florescer!</p>
             </div>
             <div className=" h-1/6 items-end flex justify-center z-10 relative">
-              <Button color="blue-light" rounded bold className="px-12">
+              <Button color="blue-light" size="lg" rounded bold className="font-Mulish" link={routes.donate}>
                 Quero ajudar
               </Button>
             </div>

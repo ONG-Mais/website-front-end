@@ -1,5 +1,6 @@
 import Button from "@/GlobalComponents/Button";
 import Container from "@/GlobalComponents/Container";
+import { routes } from "@/app/lib/routes";
 
 export default function About() {
   return (
@@ -12,7 +13,14 @@ export default function About() {
             vulnerabilidade social. Com amor e apoio, buscamos construir um futuro promissor. Sua doação é essencial
             para transformar vidas. Junte-se a nós nessa missão inspiradora e faça parte dessa mudança positiva hoje!
           </p>
-          <Button color="green-outline" rounded className="bg-neutral-0 font-bold px-20 py-2 self-end -mr-r24 mt-[1%]">
+          <Button
+            color="green-outline"
+            bold
+            rounded
+            size="lg"
+            className="bg-neutral-0 font-bold self-end -mr-r24 mt-[1%] py-[8px]"
+            link={routes.volunteer}
+          >
             Quero ser voluntário
           </Button>
         </div>

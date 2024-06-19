@@ -37,7 +37,7 @@ export default function Nav() {
           {link.title}
         </Link>
       ))}
-      <Button color="green-light" className="px-5" rounded>
+      <Button color="green-light" className="px-5" rounded link={routes.donate}>
         Doe agora
       </Button>
     </nav>

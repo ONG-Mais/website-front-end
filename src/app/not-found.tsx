@@ -3,6 +3,7 @@ import megaphone from "../assets/megaphone.svg";
 import wppIcon from "../assets/whatsappIcon.svg";
 import leftArrowIcon from "../assets/leftArrowIcon.svg";
 import Button from "@/GlobalComponents/Button";
+import { routes } from "./lib/routes";
 
 export default function Custom404() {
   return (
@@ -16,7 +17,13 @@ export default function Custom404() {
           <Image src={wppIcon} alt="whastapp logo" className="absolute left-[14%] top-[30%]" />
           Entrar em contato
         </Button>
-        <Button color="blue-outline" rounded bold className="w-72 flex justify-center items-center relative">
+        <Button
+          color="blue-outline"
+          rounded
+          bold
+          className="w-72 flex justify-center items-center relative"
+          link={routes.home}
+        >
           <Image src={leftArrowIcon} alt="whastapp logo" className="absolute left-[20%] top-[20%]" />
           Página Inicial
         </Button>
