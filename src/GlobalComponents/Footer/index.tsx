@@ -70,7 +70,7 @@ const social = [
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col h-[530px]">
+    <footer className="flex flex-col h-[530px] text-neutral-900">
       <div className="flex w-full h-1/2 bg-primary-100 items-center">
         <div id="marca" className="flex flex-col w-1/3 mx-r11 text-center gap-2 font-semibold">
           <img src={logo.src} alt="logo" className="w-12 self-center" />
