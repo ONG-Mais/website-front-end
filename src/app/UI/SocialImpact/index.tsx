@@ -41,8 +41,8 @@ export default function SocialImpact() {
             {data.map((card) => (
               <li key={card.id} className="flex flex-col text-center items-center w-1/5">
                 <Image src={card.icon} alt="item_icon" />
-                <h5>{card.title}</h5>
-                <p>{card.desc}</p>
+                <h5 className="py-4 text-pl font-bold">{card.title}</h5>
+                <p className="p-0 font-medium">{card.desc}</p>
               </li>
             ))}
           </ul>
