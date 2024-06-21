@@ -30,20 +30,33 @@ export default function Feedbacks() {
   const [current, setCurrent] = useState(0);
 
   return (
-    <div className="relative h-[350px]">
+    <div className="relative h-[350px] w-full sm:h-[500px]">
+      <h2 className="hidden sm:block sm:mx-r6 sm:mb-r6 w-full text-center text-pl font-bold font-Mulish">
+        NOSSOS VOLUNTÁRIOS
+      </h2>
       {data.map((item, idx) => (
-        <div key={item.id} className={`w-full h-full flex absolute ${idx === current ? "visible" : "invisible"}`}>
+        <div
+          key={item.id}
+          className={`w-full h-full flex absolute sm:flex-col-reverse sm:h-[445px] ${
+            idx === current ? "visible" : "invisible"
+          }`}
+        >
           <Arrow reverse {...{ setCurrent, arrSize }} />
           <div
-            className="w-4/6 text-neutral-0 text-h5 flex items-center justify-center flex-col"
+            className="w-4/6 sm:w-full text-neutral-0 text-h5 flex items-center justify-center flex-col sm:h-2/3"
             style={{ background: "linear-gradient(180deg, #00759A 0%, #004A61 100%)" }}
           >
-            <div className="ml-r16 mr-r6 h-2/4 flex justify-center items-center">{item.depo}</div>
-            <div className="relative self-end ml-r16 mr-r6 h-1/4 flex flex-col gap-3 items-end w-2/4 justify-end">
-              {item.author}
+            <div className="ml-r16 mr-r6 sm:mx-r4 h-2/4 flex justify-center items-center sm:text-pm sm:mt-r4">
+              {item.depo}
+            </div>
+            <div className="relative self-end ml-r16 mr-r6 h-1/4 flex flex-col gap-3 items-end w-2/4 justify-end sm:text-ps ">
+              <em>{item.author}</em>
             </div>
           </div>
-          <div className="w-2/6 bg-cover bg-center" style={{ backgroundImage: `url(${item.image})` }} />
+          <div
+            className="w-2/6 sm:w-full sm:h-2/3 bg-cover bg-center"
+            style={{ backgroundImage: `url(${item.image})` }}
+          />
           <Arrow {...{ setCurrent, arrSize }} />
         </div>
       ))}
