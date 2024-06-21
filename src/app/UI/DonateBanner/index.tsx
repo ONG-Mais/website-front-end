@@ -6,7 +6,6 @@ import girlImage from "../../../../public/images/garota_maquiada.jpg";
 import boyImage from "../../../../public/images/garoto_sorrindo_mochila.jpg";
 import interBoyImage from "../../../../public/images/garoto_torcedor_inter.png";
 import "./style.css";
-import { routes } from "@/app/lib/routes";
 import useWindowSize from "@/app/hooks/useWindowSize";
 import BannerText from "./BannerText";
 
