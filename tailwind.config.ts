@@ -8,6 +8,9 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: { max: "950px" },
+    },
     fontSize: {
       dlxl: "52px",
       ds: "44px",
@@ -22,6 +25,7 @@ const config: Config = {
       pxs: "12px",
     },
     margin: {
+      none: "0px",
       r2: "2%",
       r4: "4%",
       r6: "6%",
@@ -36,12 +40,28 @@ const config: Config = {
       r21: "21%",
       r22: "22%",
       r24: "24%",
+      px1: "4px",
+      px2: "8px",
+      px3: "12px",
+      px4: "16px",
+      px5: "20px",
+      px6: "24px",
+      px7: "28px",
+      px8: "32px",
+      px9: "36px",
+      px10: "40px",
+      px11: "44px",
+      px12: "48px",
+      px13: "52px",
+      px14: "56px",
+      px15: "60px",
     },
     fontFamily: {
       Mulish: ["Mulish", "sans-serif"],
       Lato: ["Lato", "sans-serif"],
     },
     colors: {
+      transparent: "transparent",
       primary: {
         "100": "#DCF7FF",
         "300": "#9DD9EC",

@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="w-full overflow-x-hidden">
-      <body className={`${lato.className}`}>
+      <body className={`${lato.className} overflow-x-hidden`}>
         <Header />
         {children}
         <Footer />

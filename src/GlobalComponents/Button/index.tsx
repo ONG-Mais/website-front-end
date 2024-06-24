@@ -11,47 +11,47 @@ interface ButtonProps {
   link?: string;
 }
 export default function Button({ children, className, color, rounded, bold, size, link }: ButtonProps) {
-  let tailwindColorString = "";
+  let tailwindString = "";
 
   switch (color) {
     case "green-light":
-      tailwindColorString += "bg-secondary-500 text-neutral-0 hover:bg-secondary-900";
+      tailwindString += "bg-secondary-500 text-neutral-0 hover:bg-secondary-900";
       break;
     case "green-dark": {
-      tailwindColorString += "bg-secondary-700 text-neutral-0";
+      tailwindString += "bg-secondary-700 text-neutral-0";
       break;
     }
     case "green-outline": {
-      tailwindColorString +=
-        "bg-transparent text-secondary-500 outline outline-secondary-500 hover:bg-secondary-900 hover:text-neutral-100 hover:outline-1 hover:outline-secondary-900";
+      tailwindString +=
+        " text-secondary-500 outline outline-secondary-500 hover:bg-secondary-900 hover:text-neutral-100 hover:outline-1 hover:outline-secondary-900";
       break;
     }
     case "blue-light": {
-      tailwindColorString += "bg-primary-500 text-neutral-0 hover:bg-primary-900";
+      tailwindString += "bg-primary-500 text-neutral-0 hover:bg-primary-900";
       break;
     }
     case "blue-dark": {
-      tailwindColorString += "bg-primary-700 text-neutral-0";
+      tailwindString += "bg-primary-700 text-neutral-0";
       break;
     }
     case "blue-outline": {
-      tailwindColorString +=
-        "bg-transparent text-primary-500 outline outline-primary-500 hover:bg-primary-900 hover:text-neutral-100 hover:outline-1 hover:outline-primary-900";
+      tailwindString +=
+        " text-primary-500 outline outline-primary-500 hover:bg-primary-900 hover:text-neutral-100 hover:outline-1 hover:outline-primary-900";
       break;
     }
   }
 
   switch (size) {
     case "lg": {
-      tailwindColorString += " px-16 py-3";
+      tailwindString += " px-16 py-3 ";
       break;
     }
     case "sm": {
-      tailwindColorString += " px-5 py-2";
+      tailwindString += " px-5 py-2 ";
       break;
     }
     default: {
-      tailwindColorString += " px-7 py-2";
+      tailwindString += " px-7 py-2 ";
     }
   }
 
@@ -60,11 +60,11 @@ export default function Button({ children, className, color, rounded, bold, size
       <Link
         href={link}
         className={`
-          text-pl duration-300 
-          ${tailwindColorString} 
+          text-pl duration-300 flex justify-center items-center
+          ${tailwindString} 
           ${rounded ? "rounded-3xl" : "rounded-lg"} 
-          ${bold ? "font-bold" : "font-normal"}
-          ${className}
+          ${bold ? "font-bold" : "font-normal"} 
+          ${className} 
      `}
       >
         <button>{children}</button>
@@ -75,8 +75,8 @@ export default function Button({ children, className, color, rounded, bold, size
   return (
     <button
       className={`
-        text-pl duration-300 
-        ${tailwindColorString} 
+        text-pl duration-300 flex justify-center items-center
+        ${tailwindString} 
         ${rounded ? "rounded-3xl" : "rounded-lg"} 
         ${bold ? "font-bold" : "font-normal"}
         ${className}

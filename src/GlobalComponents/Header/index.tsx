@@ -13,6 +13,7 @@ export default function Header() {
 
   //não estou totalmente feliz com a solução que encontrei pois estou achando o código muito repetitivo aqui. Retornar aqui no futuro para refatoração!
   //tirar os comentáios quando o as páginas forem implementadas. Atualamente, como caem no 404, precisam ficar como fixed!
+
   function checkInitialPath(path: string) {
     switch (path) {
       case routes.home: {
@@ -52,12 +53,13 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full flex h-24 items-center ${fixed ? "fixed bg-primary-900" : "absolute"} top-0 left-0 z-50`}
+      className={`w-full flex h-24 items-center top-0 left-0 z-50
+        ${fixed ? "fixed bg-primary-900" : "absolute"} `}
     >
-      <div className="mx-r11 flex w-svw items-center">
-        <Link href={"/"}>
+      <div className="mx-r11 flex w-svw items-center sm:mx-r6">
+        <a href={"/"} className="z-50">
           <img src={logo.src} alt="logo" className="w-[4.5rem] h-16" />
-        </Link>
+        </a>
         <Nav />
       </div>
     </header>
