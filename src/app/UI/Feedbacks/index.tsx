@@ -37,7 +37,7 @@ export default function Feedbacks() {
       {data.map((item, idx) => (
         <div
           key={item.id}
-          className={`w-full h-full flex absolute sm:flex-col-reverse sm:h-[445px] ${
+          className={`w-full h-full flex absolute sm:flex-col-reverse sm:h-[450px] ${
             idx === current ? "visible" : "invisible"
           }`}
         >

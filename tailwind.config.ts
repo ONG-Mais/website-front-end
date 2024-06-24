@@ -9,7 +9,7 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      sm: { max: "435px" },
+      sm: { max: "950px" },
     },
     fontSize: {
       dlxl: "52px",
