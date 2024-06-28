@@ -1,6 +1,7 @@
 import Button from "@/GlobalComponents/Button";
 import { routes } from "@/app/lib/routes";
 import { imageDivType } from "../../page";
+import "./styles.css";
 
 interface MosaicProps {
   arr: imageDivType[];

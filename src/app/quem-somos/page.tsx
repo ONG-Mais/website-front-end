@@ -5,7 +5,6 @@ import oralExam from "../../../public/images/exame_bucal.jpeg";
 import kitchenClass from "../../../public/images/aula_cozinha.jpeg";
 import bagHolder from "../../../public/images/criança_segurando_sacola.jpeg";
 import Container from "@/GlobalComponents/Container";
-import "./styles.css";
 import Mosaic from "./Components/Mosaic";
 import Mission from "./Components/Mission";
 import Values from "./Components/Values";
