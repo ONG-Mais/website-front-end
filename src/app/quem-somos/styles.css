@@ -1,0 +1,60 @@
+.portrait:nth-of-type(2) {
+  height: 384px;
+  div {
+    height: 100%;
+  }
+
+  @media (max-width: 900px) {
+    height: 16rem;
+    div {
+      background-position: right;
+    }
+  }
+}
+
+.portrait:nth-of-type(4) {
+  height: 384px;
+  div {
+    height: 100%;
+  }
+  @media (max-width: 900px) {
+    height: 16rem;
+  }
+}
+
+.image-101::after,
+.image-302::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(0, 186, 41, 0.25), rgba(0, 186, 41, 0.25)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+.image-102::after,
+.image-301::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(253, 38, 0, 0.25), rgba(253, 38, 0, 0.25)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+.image-201::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(0, 173, 226, 0.25), rgba(0, 173, 226, 0.25)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+.image-401::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(246, 191, 4, 0.25), rgba(246, 191, 4, 0.25)),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
