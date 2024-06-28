@@ -59,7 +59,12 @@ export default function Nav() {
         <div className="mobile-menu hidden sm:bg-neutral-0 sm:absolute sm:top-0 sm:right-0 sm:h-[93vh] sm:w-svw sm:flex rounded-b-3xl">
           <ul className="text-neutral-900 flex flex-col w-svw justify-start sm:mt-[20vh] sm:ml-px5">
             {links.map((link) => (
-              <Link key={link.id} href={link.to} className="text-pl font-semibold border-b border-b-neutral-200 py-5">
+              <Link
+                key={link.id}
+                href={link.to}
+                onClick={() => handleMenu()}
+                className="text-pl font-semibold border-b border-b-neutral-200 py-5"
+              >
                 {link.title}
               </Link>
             ))}
