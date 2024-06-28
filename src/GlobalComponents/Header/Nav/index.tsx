@@ -18,7 +18,7 @@ const links = [
   {
     id: 2,
     title: "O que fazemos",
-    to: routes.whatWeDo.main,
+    to: routes.whatWeDoHome,
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ export default function Nav() {
 
   return (
     <nav className="flex gap-10 justify-end w-full items-center h-full text-neutral-0">
-      {/* mobile */}
+      {/* mobile -- Hamburguer Menu */}
       <Image
         src={hamburguerIcon}
         alt="menu"
@@ -72,7 +72,7 @@ export default function Nav() {
           <Image src={closeIcon} alt="close-menu" className="w-5 h-24 mr-r6" onClick={() => handleMenu()} />
         </div>
       </div>
-      {/* end of mobile */}
+      {/* end of mobile -- Hamburguer Menu*/}
       {links.map((link) => (
         <Link key={link.id} href={link.to} className="text-pl sm:hidden">
           {link.title}

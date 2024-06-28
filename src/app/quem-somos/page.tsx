@@ -1,6 +1,50 @@
+import drivingKid from "../../../public/images/criança_dirigindo.jpeg";
+import sportsTeam from "../../../public/images/time_esporte.jpeg";
+import funnyGlasses from "../../../public/images/crianças_oculos.jpeg";
+import oralExam from "../../../public/images/exame_bucal.jpeg";
+import kitchenClass from "../../../public/images/aula_cozinha.jpeg";
+import bagHolder from "../../../public/images/criança_segurando_sacola.jpeg";
 import Container from "@/GlobalComponents/Container";
 import "./styles.css";
-import Mosaic from "./UI/Mosaic";
+import Mosaic from "./Components/Mosaic";
+import Mission from "./Components/Mission";
+import Values from "./Components/Values";
+import Button from "@/GlobalComponents/Button";
+
+export type imageDivType = {
+  id: number;
+  images: { id: number; src: string; alt: string }[];
+};
+
+const imagesDiv: imageDivType[] = [
+  {
+    id: 1,
+    images: [
+      {
+        id: 101,
+        src: drivingKid.src,
+        alt: "crianças em um buggy",
+      },
+      { id: 102, src: sportsTeam.src, alt: "Times de futebol" },
+    ],
+  },
+  {
+    id: 2,
+    images: [{ id: 201, src: funnyGlasses.src, alt: "Crianças com óculos de festa" }],
+  },
+  {
+    id: 3,
+    images: [
+      { id: 301, src: oralExam.src, alt: "Teste de Covid" },
+      { id: 302, src: kitchenClass.src, alt: "Aula de culinária" },
+    ],
+  },
+
+  {
+    id: 4,
+    images: [{ id: 401, src: bagHolder.src, alt: "criança segurando uma sacola" }],
+  },
+];
 
 export default function Page() {
   return (
@@ -18,7 +62,17 @@ export default function Page() {
           alimentos e atividades.
         </p>
         <br />
-        <Mosaic />
+        <Mosaic arr={imagesDiv} />
+        <br />
+        <Mission />
+        <Values />
+        <br />
+        <div className="w-full flex flex-col items-center gap-5 mb-r4 sm:mb-r2">
+          <span className="font-bold font-Mulish text-pl sm:text-pm">Faça parte dessa causa, entre em contato!</span>
+          <Button color="blue-light" rounded link="/doacao">
+            Quero apoiar a causa
+          </Button>
+        </div>
       </Container>
     </div>
   );
