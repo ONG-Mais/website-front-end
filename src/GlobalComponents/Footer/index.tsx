@@ -1,8 +1,8 @@
 import Link from "next/link";
-import logo from "../../assets/logo.png";
-import FbLogo from "./fbIcon.svg";
-import IgLogo from "./igIcon.svg";
-import WppLogo from "./whatsappIcon.svg";
+import logo from "../../assets/images/logo.png";
+import FbLogo from "../../assets/icons/fbFooterIcon.svg";
+import IgLogo from "../../assets/icons/igFooterIcon.svg";
+import WppLogo from "../../assets/icons/whatsappFooterIcon.svg";
 import Image from "next/image";
 
 const navItems = [

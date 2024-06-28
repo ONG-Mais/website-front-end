@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/images/logo.png";
 import Nav from "./Nav";
 import { useEffect, useState } from "react";
 import { routes } from "@/app/lib/routes";

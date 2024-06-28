@@ -1,7 +1,7 @@
-import caseIcon from "./caseIcon.svg";
-import familyIcon from "./familyIcon.svg";
-import foodIcon from "./foodIcon.svg";
-import handshakeIcon from "./handshakeIcon.svg";
+import caseIcon from "@/assets/icons/caseIcon.svg";
+import familyIcon from "@/assets/icons/familyIcon.svg";
+import foodIcon from "@/assets/icons/foodIcon.svg";
+import handshakeIcon from "@/assets/icons/handshakeIcon.svg";
 import Image from "next/image";
 
 const data = [

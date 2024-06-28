@@ -1,7 +1,7 @@
 import Image from "next/image";
-import megaphone from "../assets/megaphone.svg";
-import wppIcon from "../assets/whatsappIcon.svg";
-import leftArrowIcon from "../assets/leftArrowIcon.svg";
+import megaphone from "../assets/images/megaphone.svg";
+import wppIcon from "../assets/icons/whatsappIcon.svg";
+import leftArrowIcon from "../assets/icons/leftArrowIcon.svg";
 import Button from "@/GlobalComponents/Button";
 import { routes } from "./lib/routes";
 

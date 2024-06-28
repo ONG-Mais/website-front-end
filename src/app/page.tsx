@@ -1,8 +1,8 @@
 import Banner from "@/GlobalComponents/Banner";
-import About from "./UI/About";
-import SocialImpact from "./UI/SocialImpact";
-import DonateBanner from "./UI/DonateBanner";
-import Feedbacks from "./UI/Feedbacks";
+import About from "./Components/About";
+import SocialImpact from "./Components/SocialImpact";
+import DonateBanner from "./Components/DonateBanner";
+import Feedbacks from "./Components/Feedbacks";
 export default function Home() {
   return (
     <main>
