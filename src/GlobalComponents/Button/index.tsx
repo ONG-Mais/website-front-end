@@ -22,6 +22,7 @@ interface ButtonProps {
   size?: "lg" | "sm";
   link?: routeValues;
 }
+
 export default function Button({ children, className, color, rounded, bold, size, link }: ButtonProps) {
   let sizeString = "";
 

@@ -12,8 +12,8 @@ export const routes = {
   donate: "/doacao",
   volunteer: "/voluntario",
   partnerUp: "/empresa-parceira",
-};
+} as const;
 
 export type routeKeys = keyof typeof routes;
-const routeValuesArray = Object.values(routes);
+export const routeValuesArray = Object.values(routes);
 export type routeValues = (typeof routeValuesArray)[number];
