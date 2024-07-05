@@ -3,16 +3,17 @@
 import Button from "@/GlobalComponents/Button";
 import Link from "next/link";
 import { routes } from "@/app/lib/routes";
+import { useState } from "react";
+import HamburguerMenu from "./HamburguerMenu";
 import Image from "next/image";
 import hamburguerIcon from "../hamburguerIcon.svg";
-import closeIcon from "../closeHamburguerIcon.svg";
-import { useState } from "react";
 import { handleScroll } from "@/app/lib/handleScroll";
+import { link } from "../types";
 
-const links = [
+export const links: link[] = [
   {
     id: 1,
-    title: "Quem Somos",
+    title: "Quem somos",
     to: routes.whoAreWe,
   },
   {
@@ -47,39 +48,16 @@ export default function Nav() {
 
   return (
     <nav className="flex gap-10 justify-end w-full items-center h-full text-neutral-0">
-      {/* mobile -- Hamburguer Menu */}
       <Image
         src={hamburguerIcon}
         alt="menu"
         className={`sm:block hidden sm:z-50 ${showMenu ? "hidden" : "block"}`}
         onClick={() => handleMenu()}
+        data-testid="hamburguer-icon"
       />
-      <div className={`hamburguer-menu hidden z-40 ${showMenu ? "sm:flex" : "sm:hidden"}`}>
-        <div className="modal-bg hidden sm:block bg-neutral-800 opacity-30 fixed top-0 left-0 m-none w-svw h-svh z-0 overflow-hidden" />
-        <div className="mobile-menu hidden sm:bg-neutral-0 sm:absolute sm:top-0 sm:right-0 sm:h-[93vh] sm:w-svw sm:flex rounded-b-3xl">
-          <ul className="text-neutral-900 flex flex-col w-svw justify-start sm:mt-[20vh] sm:ml-px5">
-            {links.map((link) => (
-              <Link
-                key={link.id}
-                href={link.to}
-                onClick={() => handleMenu()}
-                className="text-pl font-semibold border-b border-b-neutral-200 py-5"
-              >
-                {link.title}
-              </Link>
-            ))}
-            <div className="w-full flex justify-center items-center">
-              <Button color="green-light" className="mt-r8" rounded link={routes.donate} size="lg">
-                Doe agora
-              </Button>
-            </div>
-          </ul>
-          <Image src={closeIcon} alt="close-menu" className="w-5 h-24 mr-r6" onClick={() => handleMenu()} />
-        </div>
-      </div>
-      {/* end of mobile -- Hamburguer Menu*/}
+      {showMenu && <HamburguerMenu {...{ showMenu, handleMenu, links }} />}
       {links.map((link) => (
-        <Link key={link.id} href={link.to} className="text-pl sm:hidden">
+        <Link key={link.id} href={link.to} className="text-pl sm:hidden" style={{ wordSpacing: "0.25em" }}>
           {link.title}
         </Link>
       ))}

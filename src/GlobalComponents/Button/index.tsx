@@ -43,6 +43,7 @@ export default function Button({ children, className, color, rounded, bold, size
   if (link) {
     return (
       <Link
+        data-testid="link"
         href={link}
         className={`
           text-pl duration-300 flex justify-center items-center
