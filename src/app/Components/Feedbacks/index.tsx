@@ -31,9 +31,7 @@ export default function Feedbacks() {
 
   return (
     <div className="relative h-[350px] w-full sm:h-[500px]">
-      <h2 className="hidden sm:block sm:mx-r6 sm:mb-r6 w-full text-center text-pl font-bold font-Mulish">
-        NOSSOS VOLUNTÁRIOS
-      </h2>
+      <h2 className="hidden sm:block sm:mb-r6 w-full text-center text-pl font-bold font-Mulish">NOSSOS VOLUNTÁRIOS</h2>
       {data.map((item, idx) => (
         <div
           key={item.id}
