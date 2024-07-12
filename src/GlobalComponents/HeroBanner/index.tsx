@@ -1,10 +1,10 @@
-import Button from "../Button";
 import "./style.css";
+import Button from "../Button";
 
 interface BannerProps {
   image: string;
-  title?: string;
-  text?: string;
+  title: string;
+  text: string;
 }
 
 export default function Banner({ image, title, text }: BannerProps) {
