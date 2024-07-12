@@ -48,7 +48,7 @@ const imagesDiv: imageDivType[] = [
 export default function Page() {
   return (
     <div className="mt-r8 sm:mt-[20vh]">
-      <Container>
+      <Container id="sobre-nos">
         <div className="flex flex-col sm:justify-center sm:items-center">
           <h2 className="font-Mulish font-bold text-h3 sm:text-center sm:text-pl pb-8 sm:pb-4 flex">SOBRE NÓS</h2>
         </div>
