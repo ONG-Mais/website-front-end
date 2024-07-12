@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark-blue-gradient: linear-gradient(0deg, rgba(0, 117, 154, 0.6), rgba(0, 117, 154, 0.6));
+  --light-blue-gradient: linear-gradient(0deg, rgba(0, 117, 154, 0.75), rgba(0, 117, 154, 0.75));
+  --dark-filter-gradient: linear-gradient(0.91deg, rgba(0, 0, 0, 0.5) 33.97%, rgba(0, 0, 0, 0) 99.25%);
+  --darker-filter-gradient: linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+  --green-to-blue-gradient: linear-gradient(
+    90.57deg,
+    rgba(12, 47, 58, 0.97) 2%,
+    #084456 32%,
+    rgba(5, 88, 114, 0.8) 55%,
+    rgba(3, 100, 131, 0.7) 75%,
+    rgba(0, 117, 154, 0.7) 100%
+  );
+}

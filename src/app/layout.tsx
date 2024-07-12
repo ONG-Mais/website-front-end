@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./global.css";
 import { lato } from "./font";
 import Header from "@/GlobalComponents/Header";
 import Footer from "@/GlobalComponents/Footer";
@@ -7,6 +7,11 @@ import Footer from "@/GlobalComponents/Footer";
 export const metadata: Metadata = {
   title: "ONG Mais",
   description: "Mudando a vida dos jovens do RS",
+  openGraph: {
+    title: "ONG Mais",
+    description: "Mudando a vida dos jovens do RS",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

@@ -1,13 +1,15 @@
-import Banner from "@/GlobalComponents/Banner";
+import HeroBanner from "@/GlobalComponents/HeroBanner";
 import About from "./Components/About";
 import SocialImpact from "./Components/SocialImpact";
 import DonateBanner from "./Components/DonateBanner";
 import Feedbacks from "./Components/Feedbacks";
+import bannerImage from "../../public/images/criança_pintando.jpg";
+
 export default function Home() {
   return (
     <main>
-      <Banner
-        image={"/images/criança_pintando.jpg"}
+      <HeroBanner
+        image={bannerImage.src}
         title="DIGNIDADE, ESPERANÇA E CONHECIMENTO"
         text="Transformando a vida de crianças e adolescentes"
       />

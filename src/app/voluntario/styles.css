@@ -1,0 +1,20 @@
+.select-container::after {
+  --size: 1rem;
+  position: absolute;
+  content: "";
+  right: 1rem;
+  pointer-events: none;
+  top: 50%;
+  background-image: url("../../assets/icons/selectArrow.svg");
+  background-repeat: no-repeat;
+  width: var(--size);
+  height: var(--size);
+}
+
+select:required:invalid {
+  color: gray;
+}
+
+option {
+  color: black;
+}

@@ -5,7 +5,6 @@ import oralExam from "../../../public/images/exame_bucal.jpeg";
 import kitchenClass from "../../../public/images/aula_cozinha.jpeg";
 import bagHolder from "../../../public/images/criança_segurando_sacola.jpeg";
 import Container from "@/GlobalComponents/Container";
-import "./styles.css";
 import Mosaic from "./Components/Mosaic";
 import Mission from "./Components/Mission";
 import Values from "./Components/Values";
@@ -49,7 +48,7 @@ const imagesDiv: imageDivType[] = [
 export default function Page() {
   return (
     <div className="mt-r8 sm:mt-[20vh]">
-      <Container>
+      <Container id="sobre-nos">
         <div className="flex flex-col sm:justify-center sm:items-center">
           <h2 className="font-Mulish font-bold text-h3 sm:text-center sm:text-pl pb-8 sm:pb-4 flex">SOBRE NÓS</h2>
         </div>
