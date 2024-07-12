@@ -3,3 +3,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --dark-blue-gradient: linear-gradient(0deg, rgba(0, 117, 154, 0.6), rgba(0, 117, 154, 0.6));
+  --light-blue-gradient: linear-gradient(0deg, rgba(0, 117, 154, 0.75), rgba(0, 117, 154, 0.75));
+  --dark-filter-gradient: linear-gradient(0.91deg, rgba(0, 0, 0, 0.5) 33.97%, rgba(0, 0, 0, 0) 99.25%);
+  --darker-filter-gradient: linear-gradient(270deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%);
+  --green-to-blue-gradient: linear-gradient(
+    90.57deg,
+    rgba(12, 47, 58, 0.97) 2%,
+    #084456 32%,
+    rgba(5, 88, 114, 0.8) 55%,
+    rgba(3, 100, 131, 0.7) 75%,
+    rgba(0, 117, 154, 0.7) 100%
+  );
+}
