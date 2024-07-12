@@ -4,66 +4,67 @@ import FbLogo from "../../assets/icons/fbFooterIcon.svg";
 import IgLogo from "../../assets/icons/igFooterIcon.svg";
 import WppLogo from "../../assets/icons/whatsappFooterIcon.svg";
 import Image from "next/image";
+import { externalLinks } from "@/app/lib/externalLinks";
+import { routes } from "@/app/lib/routes";
 
 const navItems = [
   {
     id: 1,
     title: "Sobre nós",
-    to: "/sobre-nos",
+    to: routes.whoAreWe,
     subPages: [
       {
         title: "História e Missão",
-        to: "/sobre-nos/historia-e-missao",
+        to: `${routes.whoAreWe}#sobre-nos`,
       },
       {
         title: "Atividades",
-        to: "/sobre-nos/atividades",
+        to: routes.whatWeDoHome,
       },
     ],
   },
   {
     id: 2,
     title: "Ajudar",
-    to: "/ajudar",
+    to: routes.donate,
     subPages: [
       {
         title: "Doações",
-        to: "/ajudar/historia-e-missao",
+        to: routes.donate,
       },
       {
         title: "Voluntariado",
-        to: "/ajudar/atividades",
+        to: routes.volunteer,
       },
       {
         title: "Parceria",
-        to: "/ajudar/atividades",
+        to: routes.partnerUp,
       },
     ],
   },
   {
     id: 3,
     title: "Contato",
-    to: "/contato",
-    subPages: [],
+    to: routes.contact,
   },
 ];
 const social = [
   {
     id: 1,
     title: "facebook",
-    to: "https://www.facebook.com/ong-mais",
+    to: externalLinks.facebookURL,
     icon: FbLogo,
   },
   {
     id: 2,
     title: "instagram",
-    to: "https://www.instagram.com/ong-mais",
+    to: externalLinks.instagramURL,
     icon: IgLogo,
   },
   {
     id: 3,
     title: "whatsapp",
-    to: "https://www.facebook.com/ong-mais",
+    to: externalLinks.whatsappURL,
     icon: WppLogo,
   },
 ];
@@ -102,10 +103,12 @@ export default function Footer() {
       <div className="w-full h-1/2 sm:h-[150px] bg-primary-300 gap-5 flex flex-col justify-center items-center">
         <div className="flex gap-4 justify-center items-center">
           {social.map((item) => (
-            <Image src={item.icon} alt={item.title} key={item.id} />
+            <a key={item.id} href={item.to} target="_blank" data-testid={item.title}>
+              <Image src={item.icon} alt={item.title} key={item.id} />
+            </a>
           ))}
         </div>
-        <p className="text-ps italic">© 2023 Ong Mais - Todos os direitos reservados</p>
+        <p className="text-ps italic">© 2024 ONG Mais - Todos os direitos reservados</p>
       </div>
     </footer>
   );
