@@ -32,7 +32,7 @@ const data = [
 ];
 export default function SocialImpact() {
   return (
-    <div className="w-full bg-neutral-100 mb-r4 sm:mb-none pb-0">
+    <div className="w-full bg-neutral-100 mb-r4 sm:mb-none pb-0" id="social-impact">
       <div className="flex flex-col items-center h-[360px] sm:h-auto pt-12 sm:pb-10">
         <h3 className="text-h3 sm:text-pl font-bold font-Mulish ">IMPACTO DESDE 2020</h3>
         <ul className="flex justify-around gap-x-20 sm:gap-y-8 mt-r4 sm:flex-col mx-r11 sm:mx-[19%]">
