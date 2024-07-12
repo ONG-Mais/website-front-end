@@ -14,19 +14,19 @@ const images = [
     id: 1,
     src: girlImage.src,
     alt: "Menina maquiada",
-    className: "img-1",
+    className: "donate-banner-img-1",
   },
   {
     id: 2,
     src: boyImage.src,
     alt: "Menino recebendo tênis",
-    className: "img-2",
+    className: "donate-banner-img-2",
   },
   {
     id: 3,
     src: interBoyImage.src,
     alt: "Pequeno torcedor do Inter",
-    className: "img-3",
+    className: "donate-banner-img-3",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function DonateBanner() {
             <div
               key={image.id}
               style={{ backgroundImage: `url(${image.src})` }}
-              className={`image flex-1 h-full bg-cover bg-center bg-no-repeat
+              className={`relative flex-1 h-full bg-cover bg-center bg-no-repeat
                 ${image.className}
                 ${idx === current ? "sm:block" : "sm:hidden"}
                 `}
