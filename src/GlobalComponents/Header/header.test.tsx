@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import "@testing-library/jest-dom";
-import { getByTestId, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Header from "./index";
 import hamburguerIcon from "./hamburguerIcon.svg";
 import { routes } from "@/app/lib/routes";
@@ -11,6 +11,14 @@ jest.mock("next/image", () => {
   };
   MockedImage.displayName = "MockedImage";
   return MockedImage;
+});
+
+describe("the header component", () => {
+  const header = render(<Header />);
+
+  it("should render without erros", () => {
+    expect(header).toBeInTheDocument();
+  });
 });
 
 describe("The header component", () => {
