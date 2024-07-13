@@ -1,7 +1,7 @@
 import { routeValues } from "@/app/lib/routes";
 import Link from "next/link";
 import { ReactNode } from "react";
-import { externalLinkValuesType, externalLinkValues } from "../../app/lib/externalLinks";
+import { externalLinkValuesType } from "../../app/lib/externalLinks";
 
 const tailwindButtonColors = {
   "green-light": "bg-secondary-500 text-neutral-0 hover:bg-secondary-900 ",
