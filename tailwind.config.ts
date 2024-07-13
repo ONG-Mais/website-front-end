@@ -8,8 +8,14 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    transitionProperty: {
+      all: "all",
+      bg: "background-color",
+      spacing: "margin, padding, height, width, font-size",
+      bgAndSpacing: "background-color, margin, padding, height, width, font-size",
+    },
     screens: {
-      sm: { max: "950px" },
+      sm: { max: "1230px" },
     },
     fontSize: {
       dlxl: "52px",
