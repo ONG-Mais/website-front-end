@@ -1,6 +1,7 @@
 import { routeValues } from "@/app/lib/routes";
 import Link from "next/link";
 import { ReactNode } from "react";
+import { externalLinkValuesType, externalLinkValues } from "../../app/lib/externalLinks";
 
 const tailwindButtonColors = {
   "green-light": "bg-secondary-500 text-neutral-0 hover:bg-secondary-900 ",
@@ -20,7 +21,7 @@ interface ButtonProps {
   bold?: boolean;
   className?: string;
   size?: "lg" | "sm";
-  link?: routeValues;
+  link?: routeValues | externalLinkValuesType;
 }
 
 export default function Button({ children, className, color, rounded, bold, size, link }: ButtonProps) {
@@ -45,16 +46,18 @@ export default function Button({ children, className, color, rounded, bold, size
       <Link
         data-testid="link"
         href={link}
+        target={link.includes("https://") ? "_blank" : ""}
         className={`
           text-pl duration-300 flex justify-center items-center
           ${sizeString} 
-           ${tailwindButtonColors[color]} 
+          ${tailwindButtonColors[color]} 
           ${rounded ? "rounded-3xl" : "rounded-lg"} 
           ${bold ? "font-bold" : "font-normal"} 
-          ${className} 
+          ${className}
+          
      `}
       >
-        <button>{children}</button>
+        <button className="flex gap-2 items-center">{children}</button>
       </Link>
     );
   }

@@ -10,7 +10,7 @@ interface MosaicProps {
 export default function Mosaic({ arr }: MosaicProps) {
   return (
     <>
-      <div className="flex w-full">
+      <div className="flex w-full justify-center">
         {arr.map((div) => (
           <div key={div.id} className="portrait w-full h-96 sm:h-64 sm:odd:w-[98px] sm:even:w-[80px]">
             {div.images.map((image) => (
