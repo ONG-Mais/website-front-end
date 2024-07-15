@@ -1,5 +1,6 @@
 import "./style.css";
 import Button from "../Button";
+import { routes } from "@/app/lib/routes";
 
 interface BannerProps {
   image: string;
@@ -16,8 +17,14 @@ export default function Banner({ image, title, text }: BannerProps) {
       >
         <div className="z-40 text-neutral-0 mb-r4 flex flex-col gap-7 font-Mulish text-center sm:mb-r8 ">
           <h3 className="text-ds font-semibold sm:text-h5 mx-r4">{title}</h3>
-          <p className="text-h3 font-light sm:text-pl">{text}</p>
-          <Button color="green-light" size="lg" rounded className="sm:w-52 sm:px-0 sm:self-center sm:flex hidden">
+          <p className="text-h3 font-light sm:text-pl mx-r6">{text}</p>
+          <Button
+            color="green-light"
+            size="lg"
+            rounded
+            className="sm:w-52 sm:px-0 sm:self-center sm:flex hidden"
+            link={routes.donate}
+          >
             Doe Agora
           </Button>
         </div>
