@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import closeIcon from "../../closeHamburguerIcon.svg";
+import closeIcon from "../../../../assets/icons/closeHamburguerIcon.svg";
 import { DropdownType, isDropdown, isLink, link } from "../../types";
 import Link from "next/link";
 import Button from "@/GlobalComponents/Button";

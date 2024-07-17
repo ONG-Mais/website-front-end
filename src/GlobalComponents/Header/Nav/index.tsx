@@ -6,7 +6,7 @@ import { routes } from "@/app/lib/routes";
 import { useState } from "react";
 import HamburguerMenu from "./HamburguerMenu";
 import Image from "next/image";
-import hamburguerIcon from "../hamburguerIcon.svg";
+import hamburguerIcon from "../../../assets/icons/hamburguerIcon.svg";
 import { handleScroll } from "@/app/lib/handleScroll";
 import { DropdownType, isDropdown, isLink, link } from "../types";
 import Dropdown from "./Dropdown";
