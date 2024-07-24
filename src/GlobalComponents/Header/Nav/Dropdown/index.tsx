@@ -19,7 +19,7 @@ function DesktopDropdown({ dropdown }: DesktopDropdownType) {
   return (
     <div
       key={dropdown.id}
-      className={`header-desktop-dropdown-title flex flex-col text-pl sm:hidden h-[25px] w-fit items-center relative cursor-pointer group`}
+      className={`header-desktop-dropdown-title flex flex-col text-pl sm:hidden h-[25px] w-[145px] items-center relative cursor-pointer group`}
     >
       <div className="flex gap-3 items-center ">
         {dropdown.title}
