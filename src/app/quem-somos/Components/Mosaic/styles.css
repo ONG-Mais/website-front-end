@@ -1,10 +1,10 @@
 .portrait:nth-of-type(2) {
-  height: 384px;
+  height: 360px;
   div {
     height: 100%;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1230px) {
     height: 16rem;
     div {
       background-position: right;
@@ -13,11 +13,11 @@
 }
 
 .portrait:nth-of-type(4) {
-  height: 384px;
+  height: 360px;
   div {
     height: 100%;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1230px) {
     height: 16rem;
   }
 }
