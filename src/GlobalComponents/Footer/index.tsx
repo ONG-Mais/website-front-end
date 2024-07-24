@@ -104,7 +104,7 @@ export default function Footer() {
         <div className="flex gap-4 justify-center items-center">
           {social.map((item) => (
             <a key={item.id} href={item.to} target="_blank" data-testid={item.title}>
-              <Image src={item.icon} alt={item.title} key={item.id} />
+              <Image src={item.icon} alt={item.title} key={item.id} className="hover:mix-blend-darken duration-300" />
             </a>
           ))}
         </div>
