@@ -9,6 +9,7 @@ import Mosaic from "./Components/Mosaic";
 import Mission from "./Components/Mission";
 import Values from "./Components/Values";
 import Button from "@/GlobalComponents/Button";
+import { routes } from "../lib/routes";
 
 export type imageDivType = {
   id: number;
@@ -49,10 +50,13 @@ export default function Page() {
   return (
     <div className="mt-r8 sm:mt-[20vh]">
       <Container id="sobre-nos">
-        <div className="flex flex-col sm:justify-center sm:items-center">
+        <div className="flex justify-between sm:justify-center sm:items-center mt-[77px] sm:mt-none">
           <h2 className="font-Mulish font-bold text-h3 sm:text-center sm:text-pl pb-8 sm:pb-4 flex">SOBRE NÓS</h2>
+          <Button color="green-outline" rounded link={routes.volunteer} size="lg" className="h-fit sm:hidden">
+            Quero ser voluntário
+          </Button>
         </div>
-        <p className="sm:text-ps">
+        <p className="text-pl sm:text-ps">
           Somos um coletivo dedicado a assegurar que crianças e adolescentes vulneráveis tenham acesso a oportunidades
           que estimulem seu desenvolvimento integral e permitam que alcancem sua plena dignidade. Por meio de oficinas
           de educação, esporte, cultura e artes, buscamos fomentar a aprendizagem, o crescimento pessoal e a inclusão
@@ -68,7 +72,7 @@ export default function Page() {
         <br />
         <div className="w-full flex flex-col items-center gap-5 mb-r4 sm:mb-r2">
           <span className="font-bold font-Mulish text-pl sm:text-pm">Faça parte dessa causa, entre em contato!</span>
-          <Button color="blue-light" rounded link="/doacao">
+          <Button color="blue-light" rounded link={routes.donate}>
             Quero apoiar a causa
           </Button>
         </div>

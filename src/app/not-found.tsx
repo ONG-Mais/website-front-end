@@ -1,10 +1,10 @@
 import Image from "next/image";
 import megaphone from "../assets/images/megaphone.svg";
 import wppIcon from "../assets/icons/whatsappIcon.svg";
-import leftArrowIcon from "../assets/icons/leftArrowIcon.svg";
 import Button from "@/GlobalComponents/Button";
 import { routes } from "./lib/routes";
 import { externalLinks } from "./lib/externalLinks";
+import ArrowIcon from "@/assets/icons/ArrowIcon";
 
 export default function Custom404() {
   return (
@@ -29,10 +29,13 @@ export default function Custom404() {
           color="blue-outline"
           rounded
           bold
-          className="w-72 flex justify-center items-center relative"
+          className="w-72 flex justify-center items-center relative group"
           link={routes.home}
         >
-          <Image src={leftArrowIcon} alt="whastapp logo" className="absolute left-[15%] top-[22%]" />
+          <ArrowIcon
+            direction="left"
+            className="absolute left-[15%] top-[22%] fill-primary-500 group-hover:fill-neutral-0 duration-300 "
+          />
           Página Inicial
         </Button>
       </div>
