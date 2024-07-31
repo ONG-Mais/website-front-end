@@ -11,9 +11,9 @@ export default function Mosaic({ arr }: MosaicProps) {
   return (
     <>
       <div className="flex w-full justify-center">
-        {arr.map((div) => (
-          <div key={div.id} className="portrait w-full h-96 sm:h-64 sm:odd:w-[98px] sm:even:w-[80px]">
-            {div.images.map((image) => (
+        {arr.map((portrait) => (
+          <div key={portrait.id} className="portrait w-full h-[360px] sm:h-64">
+            {portrait.images.map((image) => (
               <div
                 key={image.id}
                 style={{ backgroundImage: `url(${image.src})` }}
@@ -24,7 +24,14 @@ export default function Mosaic({ arr }: MosaicProps) {
         ))}
       </div>
       <br />
-      <Button link={routes.volunteer} size="lg" color="green-outline" rounded bold className="self-center">
+      <Button
+        link={routes.volunteer}
+        size="lg"
+        color="green-outline"
+        rounded
+        bold
+        className="sm:flex hidden self-center"
+      >
         Quero ser voluntário
       </Button>
       <br />
