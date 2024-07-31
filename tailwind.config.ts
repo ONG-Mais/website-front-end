@@ -11,8 +11,8 @@ const config: Config = {
     transitionProperty: {
       all: "all",
       bg: "background-color",
-      spacing: "margin, padding, height, width, font-size",
-      bgAndSpacing: "background-color, margin, padding, height, width, font-size",
+      spacing: "margin, padding, height",
+      bgAndSpacing: "background-color, margin, padding, height, width",
     },
     screens: {
       sm: { max: "1230px" },

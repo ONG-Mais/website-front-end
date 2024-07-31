@@ -33,13 +33,13 @@ const data = [
 export default function SocialImpact() {
   return (
     <div className="w-full bg-neutral-100 mb-r4 sm:mb-none pb-0" id="social-impact">
-      <div className="flex flex-col items-center h-[360px] sm:h-auto pt-12 sm:pb-10">
+      <div className="flex flex-col items-center h-[340px] sm:h-auto pt-12 sm:pb-10">
         <h3 className="text-h3 sm:text-pl font-bold font-Mulish ">IMPACTO DESDE 2020</h3>
-        <ul className="flex justify-around gap-x-20 sm:gap-y-8 mt-r4 sm:flex-col mx-r11 sm:mx-[19%]">
+        <ul className="flex justify-around gap-x-20 sm:gap-y-8 mt-r2 sm:mt-r4 sm:flex-col mx-r11 sm:mx-[19%]">
           {data.map((card) => (
-            <li key={card.id} className="flex flex-col text-center items-center w-1/5 sm:w-full">
+            <li key={card.id} className="flex flex-col text-center items-center sm:w-full">
               <Image src={card.icon} alt="item_icon" />
-              <h5 className="py-4 text-pl sm:text-pm font-bold text-neutral-600">{card.title}</h5>
+              <h5 className="py-4 pb-2 sm:py-2 text-pl sm:text-pm font-bold text-neutral-600">{card.title}</h5>
               <p className="font-medium text-neutral-600 sm:text-ps">{card.desc}</p>
             </li>
           ))}
