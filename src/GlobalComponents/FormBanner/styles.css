@@ -59,7 +59,7 @@
   background-position: top -150px left 0;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1230px) {
   .form-banner-bg-gradient::before {
     background: var(--dark-blue-gradient);
   }
@@ -72,5 +72,6 @@
   }
   .form-banner-bg-image {
     background-position: center;
+    background-size: cover;
   }
 }

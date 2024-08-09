@@ -29,7 +29,7 @@ export default function FormBanner({ children, image, imagePosition }: formBanne
   };
   const tailwindImagePosition = {
     center: "w-full bg-no-repeat bg-cover sm:bg-center",
-    right: "w-2/4 bg-cover form-banner-image",
+    right: "w-[60%] form-banner-image",
   };
 
   return (
