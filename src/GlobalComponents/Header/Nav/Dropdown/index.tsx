@@ -26,7 +26,11 @@ function DesktopDropdown({ dropdown }: DesktopDropdownType) {
         <Image src={downArrow} alt="↓" className={`group-hover:rotate-180 duration-300 saturate-200`} />
       </div>
       <div
-        className={`invisible w-0 h-0 flex flex-col text-neutral-900 group-hover:bg-neutral-0 group-hover:text-ps group-hover:gap-y-3 group-hover:p-6 group-hover:visible group-hover:h-72 group-hover:w-[180px] group-hover:top-10 group-hover:-left-7 group-hover:transition-spacing group-hover:duration-300 group-hover:shadow-lg group-hover:drop-shadow-lg group-hover:cursor-default `}
+        className={`invisible w-0 h-0 flex flex-col text-neutral-900 
+          group-hover:bg-neutral-0 group-hover:text-ps group-hover:gap-y-3 group-hover:p-6 
+          group-hover:visible group-hover:h-72 group-hover:w-[180px] group-hover:top-10 group-hover:-left-7 
+          group-hover:transition-spacing group-hover:duration-300 group-hover:shadow-lg group-hover:drop-shadow-lg 
+          group-hover:cursor-default `}
       >
         {dropdown.links.map((link) => (
           <Link
