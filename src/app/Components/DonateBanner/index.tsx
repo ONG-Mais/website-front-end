@@ -51,7 +51,7 @@ export default function DonateBanner() {
   }, [current, width]);
 
   return (
-    <Container noMobileMargin>
+    <Container noMobileXMargin>
       <div className="w-full flex flex-col items-center h-[355px]">
         <div className="flex w-full h-full sm:flex-col sm:justify-end relative ">
           {images.map((image, idx) => (
