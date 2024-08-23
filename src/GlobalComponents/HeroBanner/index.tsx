@@ -1,32 +1,44 @@
+import { ReactNode } from "react";
 import "./style.css";
-import Button from "../Button";
-import { routes } from "@/app/lib/routes";
 
 interface BannerProps {
   image: string;
   title: string;
   text: string;
+  mobileSize: "full" | "half";
+  children?: ReactNode;
 }
 
-export default function Banner({ image, title, text }: BannerProps) {
+/**
+ * @description Este componente entrega um hero banner nos moldes da aplicação.
+ * Sendo assim, ele pede uma imagem que irá servir como background e apresenta
+ * um gradiente azul acima desta imagem. Esse banner também renderiza um título
+ * e um subtitilo. Pode ainda receber algum conteúdo opcional como children.
+ * @param {BannerProps} props O componente aceita 5 props:
+ * @param {string} props.image A imagem de fundo do banner
+ * @param {string} props.title O título do banner
+ * @param {string} props.text O subtitulo do banner
+ * @param {"full" | "half"} props.mobileSize Define se a imagem ocupa toda a tela mobile ou somente uma parte
+ * @param {ReactNode | undefined} props.children O conteúdo adicional opcional. Comummente
+ * um botão
+ * @returns
+ */
+
+export default function HeroBanner({ image, title, text, mobileSize, children }: BannerProps) {
   return (
-    <div className={`flex h-[524px] w-full -z-20 overflow-hidden bg-neutral-900 sm:h-[100svh] sm:w-[100svw]`}>
+    <div
+      className={`flex h-[524px] w-full -z-20 overflow-hidden bg-neutral-900 sm:w-[100svw] ${
+        mobileSize === "full" ? "sm:h-[85svh]" : "sm:h-[50svh]"
+      }`}
+    >
       <div
-        className="banner w-full -mt-r21 bg-cover relative flex justify-center items-end sm:mt-none sm:bg-center"
+        className={`banner w-full -mt-r21 bg-cover relative flex justify-center items-end sm:mt-none bg-top sm:bg-center`}
         style={{ backgroundImage: `url("${image}")` }}
       >
-        <div className="z-40 text-neutral-0 mb-r4 flex flex-col gap-7 font-Mulish text-center sm:mb-r8 ">
-          <h3 className="text-ds font-semibold sm:text-h5 mx-r4">{title}</h3>
-          <p className="text-h3 font-light sm:text-pl mx-r6">{text}</p>
-          <Button
-            color="green-light"
-            size="lg"
-            rounded
-            className="sm:w-52 sm:px-0 sm:self-center sm:flex hidden"
-            link={routes.donate}
-          >
-            Doe Agora
-          </Button>
+        <div className="z-40 text-neutral-0 mb-r4 flex flex-col gap-7 font-Mulish text-center sm:mb-r10">
+          <h3 className="text-ds font-semibold sm:text-h5 ">{title}</h3>
+          <pre className="text-h3 sm:text-pl font-Mulish">{text}</pre>
+          {children}
         </div>
       </div>
     </div>
