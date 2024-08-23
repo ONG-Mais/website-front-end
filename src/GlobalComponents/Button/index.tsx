@@ -14,6 +14,16 @@ const tailwindButtonColors = {
     " text-primary-500 outline outline-primary-500 hover:bg-primary-900 hover:text-neutral-100 hover:outline-1 hover:outline-primary-900 ",
 } as const;
 
+interface Button {
+  onClick: (e: React.MouseEvent) => void;
+  link?: never;
+}
+
+interface Link {
+  link: routeValues | externalLinkValuesType;
+  onClick?: never;
+}
+
 interface ButtonProps {
   children: ReactNode;
   color: keyof typeof tailwindButtonColors;
@@ -21,10 +31,11 @@ interface ButtonProps {
   bold?: boolean;
   className?: string;
   size?: "lg" | "sm";
-  link?: routeValues | externalLinkValuesType;
 }
 
-export default function Button({ children, className, color, rounded, bold, size, link }: ButtonProps) {
+type ButtonOrLink = (Button & ButtonProps) | (Link & ButtonProps);
+
+export default function Button({ children, className, color, rounded, bold, size, link, onClick }: ButtonOrLink) {
   let sizeString = "";
 
   switch (size) {
@@ -62,9 +73,11 @@ export default function Button({ children, className, color, rounded, bold, size
     );
   }
 
-  return (
-    <button
-      className={`
+  if (onClick)
+    return (
+      <button
+        onClick={(e) => onClick(e)}
+        className={`
         text-pl duration-300 flex justify-center items-center group
         ${tailwindButtonColors[color]} 
         ${sizeString} 
@@ -72,8 +85,8 @@ export default function Button({ children, className, color, rounded, bold, size
         ${bold ? "font-bold" : "font-normal"}
         ${className}
      `}
-    >
-      {children}
-    </button>
-  );
+      >
+        {children}
+      </button>
+    );
 }
