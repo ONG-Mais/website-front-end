@@ -6,6 +6,7 @@ import WppLogo from "../../assets/icons/whatsappFooterIcon.svg";
 import Image from "next/image";
 import { externalLinks } from "@/app/lib/externalLinks";
 import { routes } from "@/app/lib/routes";
+import { adressAndPhone } from "@/app/lib/adressAndPhone";
 
 const navItems = [
   {
@@ -78,9 +79,9 @@ export default function Footer() {
           className="flex flex-col w-1/3 sm:w-full mx-r11 sm:mx-r6 text-center gap-2 font-semibold sm:text-pm sm:text-neutral-700 sm:border-b-neutral-400 sm:border-b sm:p-6"
         >
           <img src={logo.src} alt="logo" className="w-12 self-center sm:my-r4" />
-          <p>Dona Veva, 305 , Coronel Aparício Borges</p>
-          <p>91710-070, Porto Alegre - RS</p>
-          <p>Telefone/WhatsApp (51) 98458-2931</p>
+          <p>{adressAndPhone.street}</p>
+          <p>{adressAndPhone.CEP}</p>
+          <p>{adressAndPhone.phone}</p>
         </div>
         <nav className="flex w-2/3 sm:w-full gap-2 mr-r11 sm:mx-r6 [&>*:nth-of-type(1)]:border-0 sm:text-start sm:py-6 sm:justify-center">
           {navItems.map((item) => (

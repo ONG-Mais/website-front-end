@@ -1,23 +1,19 @@
 "use client";
 
-import { useState } from "react";
 import FormBanner from "@/GlobalComponents/FormBanner";
-import bannerImg from "../../../public/images/thumbs_up_batman_kid.jpg";
-import "./styles.css";
+import formImage from "../../../public/images/kid_hugs_lunch_lady.jpeg";
 import Form from "@/GlobalComponents/Form";
+import { useState } from "react";
 import { FormData, FormSelect } from "@/GlobalComponents/Form/formTypes";
-import { Volunteer } from "./types";
-import useCreateVolunteer from "../lib/hooks/useCreateVolunteer";
+import useCreatePartner from "../lib/hooks/useCreatePartner";
 import FormSucessMessage from "@/GlobalComponents/Form/FormSucessMessage";
 
 export default function Page() {
-  let volunteer: Volunteer;
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [city, setCity] = useState<string>("");
   const [state, setState] = useState<string>("");
-  const [{ isError, isLoading, isSucess, postVolunteer }] = useCreateVolunteer();
 
   const formInputs: FormData[] = [
     {
@@ -47,7 +43,8 @@ export default function Page() {
       value: phone,
       setter: setPhone,
     },
-  ];
+  ] as const;
+
   const formSelect: FormSelect[] = [
     {
       id: 1,
@@ -77,19 +74,21 @@ export default function Page() {
         },
       ],
     },
-  ];
+  ] as const;
+
+  const [{ isError, isLoading, isSucess, postPartner }] = useCreatePartner();
 
   if (isSucess) {
     return (
-      <FormBanner image={bannerImg.src} imagePosition="center">
-        <FormSucessMessage variant="volunteer" />
+      <FormBanner image={formImage.src} imagePosition="center">
+        <FormSucessMessage variant="partner" />
       </FormBanner>
     );
   }
 
   return (
-    <FormBanner image={bannerImg.src} imagePosition="right">
-      <Form formAction={postVolunteer} title="Seja um voluntário" {...{ formInputs, formSelect }} />
+    <FormBanner image={formImage.src} imagePosition="right">
+      <Form formAction={postPartner} title="Seja uma empresa parceira" {...{ formInputs, formSelect }} />
     </FormBanner>
   );
 }

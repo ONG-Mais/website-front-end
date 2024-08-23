@@ -8,6 +8,12 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    boxShadow: {
+      sm: "0 0 5px rgba(0,0,0,0.3)",
+      md: "0 0 10px rgba(0,0,0,0.3)",
+      lg: "0 0 15px rgba(0,0,0,0.3)",
+      none: "",
+    },
     transitionProperty: {
       all: "all",
       bg: "background-color",

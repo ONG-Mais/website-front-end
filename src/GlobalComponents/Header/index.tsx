@@ -8,7 +8,11 @@ import { usePathname } from "next/navigation";
 
 export default function Header() {
   const path = usePathname();
-  const [fixed, setFixed] = useState<boolean>(path !== routes.home);
+  const fixedpaths = {
+    home: routes.home,
+    contact: routes.contact,
+  };
+  const [fixed, setFixed] = useState<boolean>(path !== fixedpaths.home && path !== fixedpaths.contact);
 
   //tirar os comentáios quando o as páginas forem implementadas. Atualamente, como caem no 404, precisam ficar como fixed!
   useEffect(() => {
@@ -21,10 +25,10 @@ export default function Header() {
       //   setFixed(false);
       //   break;
       // }
-      // case routes.contact: {
-      //   setFixed(false);
-      //   break;
-      // }
+      case routes.contact: {
+        setFixed(false);
+        break;
+      }
       default: {
         setFixed(true);
       }
