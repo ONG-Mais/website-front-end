@@ -17,7 +17,7 @@ interface BannerProps {
  * @param {BannerProps} props O componente aceita 5 props:
  * @param {string} props.image A imagem de fundo do banner
  * @param {string} props.title O título do banner
- * @param {string} props.text O subtitulo do banner
+ * @param {string} props.text O subtitulo do banner. Entregue em um <pre>, então a formatação fica a critério de quem chama.
  * @param {"full" | "half"} props.mobileSize Define se a imagem ocupa toda a tela mobile ou somente uma parte
  * @param {ReactNode | undefined} props.children O conteúdo adicional opcional. Comummente
  * um botão
