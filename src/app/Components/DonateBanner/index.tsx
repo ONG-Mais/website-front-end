@@ -6,7 +6,7 @@ import girlImage from "../../../../public/images/garota_maquiada.jpg";
 import boyImage from "../../../../public/images/garoto_sorrindo_mochila.jpg";
 import interBoyImage from "../../../../public/images/garoto_torcedor_inter.png";
 import "./style.css";
-import useWindowSize from "@/app/hooks/useWindowSize";
+import useWindowSize from "@/app/lib/hooks/useWindowSize";
 import BannerText from "./BannerText";
 
 const images = [
@@ -32,7 +32,7 @@ const images = [
 
 export default function DonateBanner() {
   const [current, setCurrent] = useState(0);
-  const { width } = useWindowSize();
+  const { width, breakPoints } = useWindowSize();
   let slideTimer: NodeJS.Timeout;
   const maxValue = images.length - 1;
 
@@ -41,7 +41,7 @@ export default function DonateBanner() {
   }
 
   useEffect(() => {
-    if (width <= 500) {
+    if (width <= breakPoints.small) {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       slideTimer = setTimeout(() => {
         slideRight();
