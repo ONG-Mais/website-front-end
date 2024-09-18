@@ -3,17 +3,22 @@
 import { useEffect, useState } from "react";
 
 export default function useWindowYpos() {
-  const yPos = window ? window.scrollY : 0;
+  let yPos = 0;
+  if (typeof window !== "undefined") {
+    yPos = window.scrollY;
+  }
   const [currentY, setCurrentY] = useState(yPos);
 
   function handleScroll() {
-    setCurrentY(window && window.scrollY);
+    setCurrentY(window.scrollY);
   }
 
   useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
-    return () => document.removeEventListener("scroll", handleScroll);
-  }, [window.scrollY]);
+    if (typeof window !== "undefined") {
+      document.addEventListener("scroll", handleScroll);
+      return () => document.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
 
   return { currentY };
 }
