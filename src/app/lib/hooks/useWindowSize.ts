@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 
 export default function useWindowSize() {
   const [width, setWidth] = useState(0);
-
+  const breakPoints = {
+    regular: 1440,
+    small: 1230,
+  };
   useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
@@ -17,5 +20,5 @@ export default function useWindowSize() {
     }
   }, []);
 
-  return { width };
+  return { width, breakPoints };
 }

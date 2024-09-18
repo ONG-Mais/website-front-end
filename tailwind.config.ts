@@ -22,6 +22,7 @@ const config: Config = {
     },
     screens: {
       sm: { max: "1230px" },
+      xs: { max: "600px" },
     },
     fontSize: {
       dlxl: "52px",
