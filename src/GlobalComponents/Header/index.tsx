@@ -37,7 +37,7 @@ export default function Header() {
     <header className={`fixed transition-all duration-300 w-full flex h-24 items-center top-0 left-0 z-50 ${color}`}>
       <div className="mx-r11 flex w-svw items-center sm:mx-r6">
         <a href={"/"} className="z-50">
-          <img src={logo.src} alt="logo" className="w-[4.5rem] sm:w-20 h-16" />
+          <img src={logo.src} alt="logo" className=" w-20" />
         </a>
         <Nav />
       </div>

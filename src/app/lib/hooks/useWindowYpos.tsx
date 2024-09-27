@@ -1,10 +1,7 @@
-"use client";
-
 import { useEffect, useState } from "react";
 
 export default function useWindowYpos() {
-  const yPos = window ? window.scrollY : 0;
-  const [currentY, setCurrentY] = useState(yPos);
+  const [currentY, setCurrentY] = useState(typeof window !== "undefined" ? window.scrollY : 0);
 
   function handleScroll() {
     setCurrentY(window && window.scrollY);
@@ -13,7 +10,7 @@ export default function useWindowYpos() {
   useEffect(() => {
     document.addEventListener("scroll", handleScroll);
     return () => document.removeEventListener("scroll", handleScroll);
-  }, [window.scrollY]);
+  }, []);
 
   return { currentY };
 }
