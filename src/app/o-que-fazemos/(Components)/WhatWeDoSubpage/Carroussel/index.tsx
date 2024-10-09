@@ -36,7 +36,7 @@ export default function Carroussel({ imageArray }: Carroussel) {
         >
           <div
             style={{ backgroundImage: `url('${img.src}'` }}
-            className={`bg-cover xs:bg-center w-[25%] h-[300px] smDesktop:w-[350px] smDesktop:h-[300px] absolute xs:col-start-2 xs:row-start-1 ${
+            className={`bg-cover bg-center w-[25%] h-[300px] smDesktop:w-[320px] smDesktop:h-[300px] absolute xs:col-start-2 xs:row-start-1 ${
               current === idx ? "xs:visible xs:w-full xs:h-full" : "xs:left-0 xs:invisible xs:h-0 xs:w-0"
             }`}
           />

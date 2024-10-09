@@ -4,8 +4,8 @@ import Img3 from "../../../../public/images/teacher_showing_kids_draws.jpg";
 import Img4 from "../../../../public/images/focused_kid_in_class.jpg";
 import Img5 from "../../../../public/images/kid_reading.jpg";
 import Img6 from "../../../../public/images/kids_book_club.jpg";
-import { CarrousselImage, PageText } from "../Components/WhatWeDoSubpage/types";
-import WhatWeDoSubpage from "../Components/WhatWeDoSubpage";
+import { CarrousselImage, PageText } from "../(Components)/WhatWeDoSubpage/types";
+import WhatWeDoSubpage from "../(Components)/WhatWeDoSubpage";
 
 const pageText: PageText[] = [
   {
