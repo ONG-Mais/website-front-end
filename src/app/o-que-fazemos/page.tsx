@@ -1,6 +1,6 @@
 import Container from "@/GlobalComponents/Container";
-import { cardsData } from "./Components/data";
-import Card from "./Components/Card";
+import { cardsData } from "./(Components)/data";
+import Card from "./(Components)/Card";
 
 export default function Page() {
   return (

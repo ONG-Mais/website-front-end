@@ -21,6 +21,7 @@ const config: Config = {
       bgAndSpacing: "background-color, margin, padding, height, width",
     },
     screens: {
+      smDesktop: { max: "1465px" },
       sm: { max: "1230px" },
       xs: { max: "600px" },
     },

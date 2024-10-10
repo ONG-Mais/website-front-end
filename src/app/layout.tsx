@@ -3,6 +3,7 @@ import "./global.css";
 import { lato } from "./font";
 import Header from "@/GlobalComponents/Header";
 import Footer from "@/GlobalComponents/Footer";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "ONG Mais",
@@ -21,6 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="w-full overflow-x-hidden">
+      <GoogleTagManager gtmId="GTM-PBS89BQ6" />
       <body className={`${lato.className} overflow-x-hidden`}>
         <Header />
         {children}

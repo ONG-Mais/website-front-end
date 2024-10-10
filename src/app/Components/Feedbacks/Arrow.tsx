@@ -20,7 +20,7 @@ export default function Arrow({ reverse, setCurrent, arrSize }: ArrowProps) {
       viewBox="0 0 48 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`group ${reverse ? "rotate-180 left-10" : "right-10"} top-[44%] absolute z-50 cursor-pointer`}
+      className={`group ${reverse ? "rotate-180 left-10" : "right-10"} top-[44%] absolute z-20 cursor-pointer`}
       onClick={() => (reverse ? goLeft() : goRight())}
     >
       <rect
