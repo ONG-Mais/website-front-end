@@ -4,7 +4,9 @@ export default function useWindowYpos() {
   const [currentY, setCurrentY] = useState(typeof window !== "undefined" ? window.scrollY : 0);
 
   function handleScroll() {
-    setCurrentY(window && window.scrollY);
+    if (typeof window !== "undefined") {
+      setCurrentY(window.scrollY);
+    }
   }
 
   useEffect(() => {
