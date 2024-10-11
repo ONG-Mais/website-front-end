@@ -72,7 +72,7 @@ export default function Page() {
         <br />
         <div className="w-full flex flex-col items-center gap-5 mb-r4 sm:mb-r2">
           <span className="font-bold font-Mulish text-pl sm:text-pm">Faça parte dessa causa, entre em contato!</span>
-          <Button color="blue-light" rounded link={routes.donate}>
+          <Button color="blue-light" rounded link={routes.contact}>
             Quero apoiar a causa
           </Button>
         </div>
