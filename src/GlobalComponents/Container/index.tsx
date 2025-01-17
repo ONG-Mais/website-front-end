@@ -10,8 +10,8 @@ interface ContainerProps {
 export default function Container({ children, id, noMobileXMargin, isHero }: ContainerProps) {
   return (
     <div
-      className={`parent pb-10 relative sm:pb-8 flex flex-col w-svw  scroll-mt-28 z-20 ${
-        isHero && "pt-28 sm:text-center sm:pt-16"
+      className={`parent pb-10 relative sm:pb-8 flex flex-col w-svw scroll-mt-28 z-20 ${
+        isHero && "pt-32 sm:text-center sm:pt-0 sm:mt-[20vh]"
       }`}
       id={id}
     >

@@ -1,7 +1,8 @@
 "use client";
 
 import HeroBanner from "@/GlobalComponents/HeroBanner";
-import bannerImg from "../../../public/images/kids_playing_swing.jpeg";
+import bannerImg from "../../../public/images/banner-bgs/contact.png";
+import bannerImgMobile from "../../../public/images/banner-bgs/contact_mobile.png";
 import Container from "@/GlobalComponents/Container";
 import locationMap from "../../../public/images/location_map.png";
 import { adressAndPhone } from "../lib/adressAndPhone";
@@ -9,8 +10,10 @@ import { useState } from "react";
 import Button from "@/GlobalComponents/Button";
 import locationPin from "@/assets/icons/locationPin.svg";
 import Image from "next/image";
+import useWindowSize from "../lib/hooks/useWindowSize";
 
 export default function Page() {
+  const { width } = useWindowSize();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -43,7 +46,7 @@ export default function Page() {
   return (
     <>
       <HeroBanner
-        image={bannerImg.src}
+        image={width <= 768 ? bannerImgMobile.src : bannerImg.src}
         mobileSize="half"
         title="VAMOS CONVERSAR?"
         text={`Ficou com alguma dúvida?\nMande uma mensagem!`}

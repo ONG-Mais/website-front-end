@@ -10,7 +10,7 @@ import useWindowYpos from "@/app/lib/hooks/useWindowYpos";
 /**
  * @description Rotas nas quais o Header deverá possuir uma cor de fundo transparente quando o usuário estiver no topo da página
  */
-const initialTransparetBgRoutes: string[] = [routes.home, routes.contact];
+const initialTransparetBgRoutes: string[] = [routes.home, routes.contact, routes.donate];
 
 const bgInitialColor = {
   blue: "bg-primary-900",
