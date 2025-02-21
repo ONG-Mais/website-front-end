@@ -1,10 +1,9 @@
-import Container from "@/GlobalComponents/Container";
-
 type FormSucessMessage = {
-  variant: "partner" | "volunteer";
+  variant: "partner" | "volunteer" | "error";
+  errorData?: string;
 };
 
-export default function FormSucessMessage({ variant }: FormSucessMessage) {
+export default function FormFeedbackMessage({ variant, errorData }: FormSucessMessage) {
   let type;
   switch (variant) {
     case "partner":
@@ -13,13 +12,17 @@ export default function FormSucessMessage({ variant }: FormSucessMessage) {
     case "volunteer":
       type = "voluntário";
       break;
+    case "error":
+      type = "erro";
   }
-
+  console.log(errorData);
   return (
     <div className="flex flex-col w-full items-center min-h-[70vh] gap-24 sm:gap-8 pt-8 sm:justify-center">
       <div className="w-full flex justify-center">
         <p className="text-center text-h3 sm:text-pl font-bold font-Mulish  text-primary-300 sm:mx-r6">
-          Agradecemos pelo seu cadastro como {type}!
+          {variant === "error"
+            ? "Algo deu errado ao enviar os dados, por favor tente novamente"
+            : `Agradecemos pelo seu cadastro como ${type}!`}
         </p>
       </div>
       <div className="flex flex-col gap-8 sm:gap-4">
