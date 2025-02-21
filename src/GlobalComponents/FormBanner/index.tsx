@@ -36,7 +36,7 @@ export default function FormBanner({ children, image, imagePosition }: formBanne
     <div
       className={`${
         imagePosition === "right" ? tailwindBackgroundEffect.right : tailwindBackgroundEffect.center
-      } bg-gradient mt-[6rem] w-full h-full relative flex`}
+      } bg-gradient mt-[6rem] w-full h-full relative flex min-h-svh`}
     >
       <div
         id="form-wrapper"

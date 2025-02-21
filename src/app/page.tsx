@@ -1,17 +1,21 @@
+"use client";
 import HeroBanner from "@/GlobalComponents/HeroBanner";
 import About from "./Components/About";
 import SocialImpact from "./Components/SocialImpact";
 import DonateBanner from "./Components/DonateBanner";
 import Feedbacks from "./Components/Feedbacks";
-import bannerImage from "../../public/images/criança_pintando.jpg";
+import bannerImage from "../../public/images/banner-bgs/home.png";
+import bannerImageMobile from "../../public/images/banner-bgs/home_mobile.png";
 import Button from "@/GlobalComponents/Button";
 import { routes } from "./lib/routes";
+import useWindowSize from "./lib/hooks/useWindowSize";
 
 export default function Home() {
+  const { width } = useWindowSize();
   return (
     <main>
       <HeroBanner
-        image={bannerImage.src}
+        image={width <= 768 ? bannerImageMobile.src : bannerImage.src}
         mobileSize="full"
         title="DIGNIDADE, ESPERANÇA E CONHECIMENTO"
         text={`Transformando a vida de crianças e\nadolescentes`}

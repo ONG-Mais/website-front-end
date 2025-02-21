@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
-import "./style.css";
 
 interface BannerProps {
   image: string;
   title: string;
   text: string;
   mobileSize: "full" | "half";
+  imageOffset?: number;
   children?: ReactNode;
 }
 
@@ -14,8 +14,9 @@ interface BannerProps {
  * Sendo assim, ele pede uma imagem que irá servir como background e apresenta
  * um gradiente azul acima desta imagem. Esse banner também renderiza um título
  * e um subtitilo. Pode ainda receber algum conteúdo opcional como children.
- * @param {BannerProps} props O componente aceita 5 props:
+ * @param {BannerProps} props O componente aceita as seguintes props:
  * @param {string} props.image A imagem de fundo do banner
+ * @param {string} props.imageOffset Ajusta a posição da imagem
  * @param {string} props.title O título do banner
  * @param {string} props.text O subtitulo do banner. Entregue em um <pre>, então a formatação fica a critério de quem chama.
  * @param {"full" | "half"} props.mobileSize Define se a imagem ocupa toda a tela mobile ou somente uma parte
@@ -24,7 +25,7 @@ interface BannerProps {
  * @returns
  */
 
-export default function HeroBanner({ image, title, text, mobileSize, children }: BannerProps) {
+export default function HeroBanner({ image, imageOffset, title, text, mobileSize, children }: BannerProps) {
   return (
     <div
       className={`flex h-[524px] w-full -z-20 overflow-hidden bg-neutral-900 sm:w-[100svw] ${
@@ -32,7 +33,7 @@ export default function HeroBanner({ image, title, text, mobileSize, children }:
       }`}
     >
       <div
-        className={`banner w-full -mt-r21 bg-cover relative flex justify-center items-end sm:mt-none bg-top sm:bg-center`}
+        className={`banner w-full bg-cover relative flex justify-center items-end sm:mt-none bg-top sm:bg-center `}
         style={{ backgroundImage: `url("${image}")` }}
       >
         <div className="z-40 text-neutral-0 mb-r4 flex flex-col gap-7 font-Mulish text-center sm:mb-r10">

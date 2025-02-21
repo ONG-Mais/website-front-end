@@ -1,27 +1,20 @@
-"use client";
-
-import { Volunteer } from "@/app/voluntario/types";
+import { Contact } from "@/types/contact";
 import { useState } from "react";
 
-/**
- * @description A implementação virá conforme o andamento do back-end
- */
-
-export default function useCreateVolunteer() {
+export default function useContact() {
   const [isSucess, setIsSucess] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const endpoint = "volunteers";
+  const endpoint = "contact";
 
-  async function postVolunteer(volunteer: Volunteer) {
+  async function postContact(contact: Contact) {
     setIsLoading(true);
     const body = {
-      name: volunteer.name,
-      email: volunteer.email,
-      telefone: volunteer.phone,
-      state: volunteer.location.state.nome,
-      city: volunteer.location.city.nome,
-      type: "volunteer",
+      name: contact.name,
+      email: contact.email,
+      subject: contact.subject,
+      message: contact.message,
+      type: "contact",
     };
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/${endpoint}`, {
@@ -43,5 +36,5 @@ export default function useCreateVolunteer() {
     }
   }
 
-  return [{ isLoading, isError, isSucess, postVolunteer }];
+  return { isSucess, isError, isLoading, postContact };
 }
