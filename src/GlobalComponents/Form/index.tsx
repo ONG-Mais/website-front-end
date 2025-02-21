@@ -4,12 +4,13 @@ import Button from "../Button";
 import { FormData, FormSelect } from "./formTypes";
 import { Volunteer } from "@/app/voluntario/types";
 import { useState } from "react";
+import useLocation from "@/app/lib/hooks/useLocation";
+import "./styles.css";
+import Loader from "@/assets/icons/loader";
 
 type Form = {
   formAction: ({ ...props }: Partner | Volunteer) => any;
   title: string;
-  formInputs: FormData[];
-  formSelect: FormSelect[];
 };
 
 /**
@@ -27,33 +28,100 @@ type Form = {
  * 
  *
 */
-export default function Form({ formAction, title, formInputs, formSelect }: Form) {
-  const [object, setObject] = useState<Partner | Volunteer>({
-    name: "",
-    phone: "",
-    city: "",
-    email: "",
-    state: "",
-  } as const);
-  type objKeys = keyof typeof object;
+export default function Form({ formAction, title }: Form) {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const {
+    states,
+    selectedState,
+    setSelectedState,
+    loadingStates,
+    cities,
+    loadingCities,
+    selectedCity,
+    setSelectedCity,
+    location,
+  } = useLocation();
+
+  async function handleSubmit(event: React.MouseEvent<Element, MouseEvent>) {
+    event.preventDefault();
+    if (location) {
+      const data = {
+        name: name,
+        email: email,
+        phone: phone,
+        location: location,
+      };
+      formAction(data);
+    } else {
+      alert("Selecione um estado e uma cidade");
+    }
+  }
 
   function handleChange(
-    e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>,
-    setter: React.Dispatch<React.SetStateAction<any>>
+    event: React.ChangeEvent<HTMLInputElement>,
+    setter: React.Dispatch<React.SetStateAction<string>>
   ) {
-    setter(e.target.value);
-    const currentKey: objKeys = e.target.name as objKeys;
-    const currentValue = e.target.value;
-    setObject((prev) => ({
-      ...prev,
-      [currentKey]: currentValue,
-    }));
+    setter(event.target.value);
   }
 
-  async function handleSubmit(e: React.MouseEvent<Element, MouseEvent>) {
-    e.preventDefault();
-    await formAction(object);
-  }
+  const formInputs: FormData[] = [
+    {
+      id: 1,
+      name: "name",
+      placeholder: "Digite seu nome completo",
+      label: "Nome",
+      type: "text",
+      value: name,
+      setter: setName,
+    },
+    {
+      id: 2,
+      name: "email",
+      placeholder: "Digite seu melhor email",
+      label: "Email",
+      type: "email",
+      value: email,
+      setter: setEmail,
+    },
+    {
+      id: 3,
+      name: "phone",
+      placeholder: "(00) 00000 0000",
+      label: "Celular/Whatsapp",
+      type: "text",
+      value: phone,
+      setter: setPhone,
+    },
+  ];
+
+  const formSelect: FormSelect[] = [
+    {
+      id: 1,
+      name: "state",
+      placeholder: "Selecione um estado",
+      label: "Estado",
+      options: states?.map((state) => ({ id: state.id, title: state.nome })) || [
+        { id: 0, title: "carregando estados..." },
+      ],
+      value: selectedState ?? "",
+      setter: setSelectedState,
+      loader: loadingStates,
+      loadingMessage: "Carregando estados...",
+    },
+    {
+      id: 2,
+      name: "city",
+      placeholder: "Selecione uma cidade",
+      label: "Cidade",
+      options: cities?.map((city) => ({ id: city.id, title: city.nome })) || [{ id: 0, title: "carregando cidades" }],
+      value: selectedCity ?? "",
+      setter: setSelectedCity,
+      loader: loadingCities,
+      loadingMessage: "Carregando cidades",
+    },
+  ];
 
   return (
     <>
@@ -73,7 +141,7 @@ export default function Form({ formAction, title, formInputs, formSelect }: Form
               name={input.name}
               placeholder={input.placeholder}
               value={input.value}
-              onChange={(e) => handleChange(e, input.setter)}
+              onChange={(event) => handleChange(event, input.setter)}
               required
             />
           </div>
@@ -88,24 +156,31 @@ export default function Form({ formAction, title, formInputs, formSelect }: Form
                 id={select.name}
                 name={select.name}
                 value={select.value}
-                onChange={(e) => handleChange(e, select.setter)}
                 className="select p-4 rounded-md appearance-none w-full"
+                onChange={(event) => select.setter(Number(event.target.value))}
                 required
               >
-                <option value="" hidden disabled>
-                  {select.placeholder}
+                <option>
+                  {selectedState != null && !isNaN(selectedState) ? select.placeholder : "Selecione um estado"}
                 </option>
-                {select.options.map((option) => (
-                  <option key={option.id} value={option.title}>
-                    {option.title}
-                  </option>
-                ))}
+                {select.loader || loadingStates ? (
+                  <option value="">{select.loadingMessage}</option>
+                ) : (
+                  select.options.map((option) => (
+                    <option key={option.id} value={option.id}>
+                      {option.title}
+                    </option>
+                  ))
+                )}
               </select>
+              <span className="loader">
+                <Loader size="5" stroke="#00759a" fill="#00759a" show={select.loader} />
+              </span>
             </div>
           </div>
         ))}
         <div className="flex w-full justify-end mt-r2">
-          <Button color="blue-light" size="lg" onClick={(e) => handleSubmit(e)}>
+          <Button color="blue-light" size="lg" onClick={(event) => handleSubmit(event)}>
             Enviar
           </Button>
         </div>
