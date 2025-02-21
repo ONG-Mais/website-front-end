@@ -11,6 +11,8 @@ import Button from "@/GlobalComponents/Button";
 import locationPin from "@/assets/icons/locationPin.svg";
 import Image from "next/image";
 import useWindowSize from "../lib/hooks/useWindowSize";
+import useContact from "../lib/hooks/useContact";
+import Loader from "@/assets/icons/loader";
 
 export default function Page() {
   const { width } = useWindowSize();
@@ -18,6 +20,18 @@ export default function Page() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const { isLoading, isSucess, postContact } = useContact();
+
+  function handleSubmit(event: React.MouseEvent<Element, MouseEvent>) {
+    event.preventDefault();
+    const contact = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message,
+    };
+    postContact(contact);
+  }
 
   const inputs = [
     {
@@ -75,44 +89,51 @@ export default function Page() {
               </div>
             </div>
           </div>
-          <form
-            action=""
-            className="flex flex-col bg-primary-100 px-16 py-8 rounded-xl shadow-sm sm:shadow-none sm:px-8 sm:w-full sm:rounded-none sm:mb-[32px]"
-          >
-            {inputs.map((input) => (
-              <div key={input.id} className="flex flex-col mb-r4 gap-2">
-                <label htmlFor={input.label} className="text-pm text-neutral-900">
-                  {input.label}
+          {isLoading ? (
+            <div className="flex flex-col justify-center items-center">
+              <Loader fill="#00759a" stroke="#00759a" show={isLoading} size="10" />
+            </div>
+          ) : isSucess ? (
+            <div className="flex flex-col bg-primary-100 px-16 py-8 rounded-xl shadow-sm sm:shadow-none sm:px-8 sm:w-full sm:rounded-none sm:mb-[32px]">
+              <p className="text-pm text-neutral-900">Mensagem enviada com sucesso!</p>
+            </div>
+          ) : (
+            <form className="flex flex-col bg-primary-100 px-16 py-8 rounded-xl shadow-sm sm:shadow-none sm:px-8 sm:w-full sm:rounded-none sm:mb-[32px]">
+              {inputs.map((input) => (
+                <div key={input.id} className="flex flex-col mb-r4 gap-2">
+                  <label htmlFor={input.label} className="text-pm text-neutral-900">
+                    {input.label}
+                  </label>
+                  <input
+                    id={input.label}
+                    type={input.type}
+                    value={input.value}
+                    onChange={(e) => input.setter(e.target.value)}
+                    className="rounded-md p-3 outline outline-1 outline-neutral-200 sm:shadow-sm font-medium"
+                  />
+                </div>
+              ))}
+              <div className="flex flex-col gap-2">
+                <label htmlFor="mensagem" className="text-pm text-neutral-900 font-medium">
+                  Mensagem
                 </label>
-                <input
-                  id={input.label}
-                  type={input.type}
-                  value={input.value}
-                  onChange={(e) => input.setter(e.target.value)}
-                  className="rounded-md p-3 outline outline-1 outline-neutral-200 sm:shadow-sm font-medium"
+                <textarea
+                  id="mensagem"
+                  rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  style={{ resize: "none" }}
+                  className="outline outline-1 outline-neutral-200 rounded-md p-3 sm:shadow-sm"
                 />
               </div>
-            ))}
-            <div className="flex flex-col gap-2">
-              <label htmlFor="mensagem" className="text-pm text-neutral-900 font-medium">
-                Mensagem
-              </label>
-              <textarea
-                id="mensagem"
-                rows={4}
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                style={{ resize: "none" }}
-                className="outline outline-1 outline-neutral-200 rounded-md p-3 sm:shadow-sm"
-              />
-            </div>
-            <br />
-            <div className="w-72 flex justify-start sm:w-full sm:justify-center">
-              <Button color="blue-light" onClick={(e) => e.preventDefault()} className="w-[280px] sm:w-[250px]">
-                Enviar mensagem
-              </Button>
-            </div>
-          </form>
+              <br />
+              <div className="w-72 flex justify-start sm:w-full sm:justify-center">
+                <Button color="blue-light" onClick={(e) => handleSubmit(e)} className="w-[280px] sm:w-[250px]">
+                  Enviar mensagem
+                </Button>
+              </div>
+            </form>
+          )}
         </div>
       </Container>
     </>
