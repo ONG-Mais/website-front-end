@@ -21,9 +21,9 @@ function DesktopDropdown({ dropdown }: DesktopDropdownType) {
       key={dropdown.id}
       className={`header-desktop-dropdown-title flex flex-col text-pl sm:hidden h-[25px] w-[145px] items-center relative cursor-pointer group`}
     >
-      <div className="flex gap-3 items-center ">
+      <div className="flex gap-3 items-center hover:text-primary-300 ">
         {dropdown.title}
-        <Image src={downArrow} alt="↓" className={`group-hover:rotate-180 duration-300 saturate-200`} />
+        <Image src={downArrow} alt="↓" className={`group-hover:rotate-180 duration-300 `} />
       </div>
       <div
         className={`invisible w-0 h-0 flex flex-col text-neutral-900 

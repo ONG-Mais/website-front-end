@@ -80,7 +80,12 @@ export default function Nav() {
         }
         if (isLink(item)) {
           return (
-            <Link key={item.id} href={item.to} className="text-pl sm:hidden" style={{ wordSpacing: "0.25em" }}>
+            <Link
+              key={item.id}
+              href={item.to}
+              className="text-pl sm:hidden hover:text-primary-300"
+              style={{ wordSpacing: "0.25em" }}
+            >
               {item.title}
             </Link>
           );
