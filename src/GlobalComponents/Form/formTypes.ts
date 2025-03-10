@@ -23,4 +23,6 @@ export interface FormSelect {
   setter: React.Dispatch<React.SetStateAction<number | null>>;
   loader: boolean;
   loadingMessage: string;
+  isOpen: boolean;
+  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }

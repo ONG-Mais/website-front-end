@@ -7,6 +7,7 @@ import { useState } from "react";
 import useLocation from "@/app/lib/hooks/useLocation";
 import "./styles.css";
 import Loader from "@/assets/icons/loader";
+import SelectArrow from "@/assets/icons/selectArrow";
 
 type Form = {
   formAction: ({ ...props }: Partner | Volunteer) => any;
@@ -32,6 +33,11 @@ export default function Form({ formAction, title }: Form) {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
+  const [isStateOpen, setIsStateOpen] = useState<boolean>(false);
+  const [isCityOpen, setIsCityOpen] = useState<boolean>(false);
+
+  console.log("states", isStateOpen);
+  console.log("cities", isCityOpen);
   const {
     states,
     selectedState,
@@ -109,6 +115,8 @@ export default function Form({ formAction, title }: Form) {
       setter: setSelectedState,
       loader: loadingStates,
       loadingMessage: "Carregando estados...",
+      isOpen: isStateOpen,
+      setIsOpen: setIsStateOpen,
     },
     {
       id: 2,
@@ -120,6 +128,8 @@ export default function Form({ formAction, title }: Form) {
       setter: setSelectedCity,
       loader: loadingCities,
       loadingMessage: "Carregando cidades",
+      isOpen: isCityOpen,
+      setIsOpen: setIsCityOpen,
     },
   ];
 
@@ -158,6 +168,8 @@ export default function Form({ formAction, title }: Form) {
                 value={select.value}
                 className="select p-4 rounded-md appearance-none w-full"
                 onChange={(event) => select.setter(Number(event.target.value))}
+                onClick={() => select.setIsOpen(!select.isOpen)}
+                onBlur={() => select.setIsOpen(false)}
                 required
               >
                 <option>
@@ -176,6 +188,9 @@ export default function Form({ formAction, title }: Form) {
               <span className="loader">
                 <Loader size="5" stroke="#00759a" fill="#00759a" show={select.loader} />
               </span>
+              <div className="pointer-events-none absolute top-1/2 right-4">
+                <SelectArrow color="#00759a" isSelectOpen={select.isOpen} />
+              </div>
             </div>
           </div>
         ))}

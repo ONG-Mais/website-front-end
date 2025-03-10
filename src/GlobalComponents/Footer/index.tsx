@@ -26,7 +26,7 @@ const navItems = [
   },
   {
     id: 2,
-    title: "Ajudar",
+    title: "Ajuda",
     to: routes.donate,
     subPages: [
       {

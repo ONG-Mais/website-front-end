@@ -9,7 +9,7 @@ const data = [
     id: 1,
     title: "ALIMENTOS",
     icon: foodIcon,
-    desc: "+ de 30 mil Kg de alimentos distribuiídos",
+    desc: "+ de 30 mil Kg de alimentos distribuídos",
   },
   {
     id: 2,
@@ -21,13 +21,13 @@ const data = [
     id: 3,
     title: "TRABALHO",
     icon: caseIcon,
-    desc: "7 direcionamentos ao mercado de trabalho bem sucedidos.",
+    desc: "7 direcionamentos ao mercado de trabalho bem sucedidos",
   },
   {
     id: 4,
     title: "PARCERIAS",
     icon: handshakeIcon,
-    desc: "11 alunos inseridos em outras atividades através de parcerias.",
+    desc: "11 alunos inseridos em outras atividades através de parcerias",
   },
 ];
 export default function SocialImpact() {
